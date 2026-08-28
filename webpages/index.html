@@ -5,70 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sphere Style Boutique">
     <title> Sphere Style Boutique | Home </title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-    <style>
+</head>
+<body>
+        <!-- Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
 
-        /* Page Styles */
-
-        /* Hero */
-        .home-hero {
-            min-height: 92vh;
-        }
-
-        .home-hero .hero-bg {
-            background-image: url('images/hero/hero-main.jpg');
-            background-color: #1a1a1a;
-        }
-
-         /* Collections */
-        .collections-section {
-            background-color: var(--white);
-        }
-
-        .collection-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .collection-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .collection-card-img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .collection-card:hover .collection-card-img {
-            transform: scale(1.05);
-        }
-
-        .collection-card-body {
-            padding: 25px;
-            background-color: var(--white);
-        }
-
-        .collection-accent-line {
-            height: 3px;
-            border-radius: 2px;
-            margin-bottom: 15px;
-            width: 40px;
-        }
-
-        .collection-card-body h3 {
-            margin-bottom: 10px;
-        }
-
-        .collection-card-body p {
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-        
+        <!-- Logo -->
+        <a href="index.html" class="nav-logo">
+            <img src="/images/logo.png" alt="Sphere Style Boutique Logo" class="logo-img">
+            <span class="logo-text">Sphere Style <span class="logo-accent">Boutique</span></span>
+        </a>
+         <!-- Nav Links -->
+          <nav class="nav-menu" id="navMenu">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="enquiry.html" class="nav-link">Enquiry</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+ 
+</body>
