@@ -15,5 +15,66 @@
         <a href="enquiry.html" target="_blank">Enquiry</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a href="contact.html" target="_blank">Contact Us</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
     </nav>
+    <hr>
+    <h1>Enquiry</h1>
+    <br>
+    <h2>Form </h2>
+    <br>
+    <form action="results.html" method="GET" enctype="multipart/form-data">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" required>
+        </div>
+        <br>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <br>
+        <div>
+            <label for="age">Age</label>
+            <input type="number" name="age" id="age" min="1" max="200" step="5">
+        </div>
+        <br>
+        <div>
+            <label for="date">Birthdate</label>
+            <input type="date" name="date" id="date" min="2019-06-10">
+        </div>
+        <br>
+      <div>
+        <h4>Gender</h4>
+        <div>
+          <label for="male">Male</label>
+          <input type="radio" name="gender" id="male" value="male">
+        </div>
+        <div>
+          <label for="female">Female</label>
+          <input type="radio" name="gender" id="female" value="female">
+        </div>
+        <div>
+          <label for="rathernotsay">Rather Not Say</label>
+          <input type="radio" name="gender" id="rathernotsay" value="rathernotsay">
+        </div>
+        </div>
+      <br>
+      <div>
+        <label for="phone">Phone</label>
+        <input type="tel" name="phone" id="phone">
+      </div>
+        <br>
+      <div>
+        <label for="bio">Description</label>
+        <textarea id="Description" name="Description"></textarea>
+      </div>
+      <br>
+      <button type="reset">Reset</button>
+      <button type="submit">Submit</button>
+    </form>
+    <br>
+<footer>
+    <a href="https://www.instagram.com/happytoothza/" target="_blank"><img src="media/icons8-instagram-50.png"></a>
+    <a href="https://www.facebook.com/" target="_blank"><img src="media/icons8-facebook-50.png"></a>
+    <a href="https://www.linkedin.com/feed/" target="_blank"><img src="media/icons8-linkedin-50.png"></a>
+</footer>
 </body>
 </html>
