@@ -175,3 +175,78 @@
     </div>
 </section>
 
+    <!--Filter and Product Display-->
+    <section class="product-catalogue" id="product-catalogue">
+    <div class="section-container">
+
+        <!-- Section Header -->
+        <div class="section-header">
+            <p class="section-label">Browse Everything</p>
+            <h2 class="section-title">All Products</h2>
+            <p class="section-subtitle">
+                Use the filters below to narrow down your search by season, 
+                category, or colour.
+            </p>
+        </div>
+
+        <!--Filter-->
+                <div class="filter-panel" id="filterPanel">
+
+            <!-- Filter Group 1 — Season -->
+            <div class="filter-group">
+                <span class="filter-group-label">
+                    <i class="fa-solid fa-calendar"></i> Season:
+                </span>
+                <div class="filter-buttons" role="group" aria-label="Filter by season">
+                    <button class="filter-btn active" data-filter-type="season" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter-type="season" data-filter="summer">Summer</button>
+                    <button class="filter-btn" data-filter-type="season" data-filter="winter">Winter</button>
+                    <button class="filter-btn" data-filter-type="season" data-filter="autumn">Autumn</button>
+                    <button class="filter-btn" data-filter-type="season" data-filter="spring">Spring</button>
+                </div>
+            </div>
+
+            <!-- Filter Group 2 — Category -->
+            <div class="filter-group">
+                <span class="filter-group-label">
+                    <i class="fa-solid fa-shirt"></i> Category:
+                </span>
+                <div class="filter-buttons" role="group" aria-label="Filter by category">
+                    <button class="filter-btn active" data-filter-type="category" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter-type="category" data-filter="office">Office Wear</button>
+                    <button class="filter-btn" data-filter-type="category" data-filter="casual">Casual Wear</button>
+                    <button class="filter-btn" data-filter-type="category" data-filter="formal">Formal Wear</button>
+                </div>
+            </div>
+
+            <!-- Filter Group 3 — Colour -->
+            <div class="filter-group">
+                <span class="filter-group-label">
+                    <i class="fa-solid fa-palette"></i> Colour:
+                </span>
+                <div class="filter-buttons colour-filters" role="group" aria-label="Filter by colour">
+                    <button class="filter-btn active" data-filter-type="colour" data-filter="all">All</button>
+                    <button class="colour-swatch" data-filter-type="colour" data-filter="black" style="background-color:#000000;" aria-label="Filter by Black" title="Black"></button>
+                    <button class="colour-swatch" data-filter-type="colour" data-filter="white" style="background-color:#FFFFFF; border: 1px solid #ccc;" aria-label="Filter by White" title="White"></button>
+                    <button class="colour-swatch" data-filter-type="colour" data-filter="beige" style="background-color:#F5F0E8; border: 1px solid #ccc;" aria-label="Filter by Beige" title="Beige"></button>
+                    <button class="colour-swatch" data-filter-type="colour" data-filter="blue" style="background-color:#90CAF9;" aria-label="Filter by Blue" title="Blue"></button>
+                    <button class="colour-swatch" data-filter-type="colour" data-filter="red" style="background-color:#DD4A48;" aria-label="Filter by Red" title="Red"></button>
+                    <button class="colour-swatch" data-filter-type="colour" data-filter="green" style="background-color:#A1CB35;" aria-label="Filter by Green" title="Green"></button>
+                    <button class="colour-swatch" data-filter-type="colour" data-filter="grey" style="background-color:#E8E2DB; border: 1px solid #ccc;" aria-label="Filter by Grey" title="Grey"></button>
+                    <button class="colour-swatch" data-filter-type="colour" data-filter="gold" style="background-color:#C9A84C;" aria-label="Filter by Gold" title="Gold"></button>
+                </div>
+            </div>
+
+            <!-- Results Count and Clear Filters -->
+            <div class="filter-actions">
+                <span class="filter-results-count" id="filterResultsCount">
+                    Showing <strong id="productCount">12</strong> products
+                </span>
+                <button class="btn-clear-filters" id="clearFilters">
+                    <i class="fa-solid fa-xmark"></i> Clear All Filters
+                </button>
+            </div>
+
+        </div>
+        <!-- End Filter Panel -->
+
