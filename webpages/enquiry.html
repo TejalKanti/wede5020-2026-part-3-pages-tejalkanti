@@ -164,3 +164,493 @@
                         </div>
                     </div>
                 </div>
+
+  <!--Enquiry Form-->            
+                      <form
+                    class="enquiry-form"
+                    id="enquiryForm"
+                    novalidate
+                    aria-label="Customer enquiry form">
+
+                    <!-- ---- SECTION A: Personal Information ---- -->
+                    <fieldset class="form-fieldset">
+                        <legend class="form-legend">
+                            <i class="fa-solid fa-user"></i>
+                            Personal Information
+                        </legend>
+
+                        <!-- Row 1: First Name + Last Name -->
+                        <div class="form-row">
+
+                            <!-- First Name -->
+                            <div class="form-group">
+                                <label for="firstName" class="form-label">
+                                    First Name <span class="required-star">*</span>
+                                </label>
+                                <div class="form-input-wrapper">
+                                    <i class="fa-solid fa-user form-input-icon"></i>
+                                    <input
+                                        type="text"
+                                        id="firstName"
+                                        name="firstName"
+                                        class="form-input"
+                                        placeholder="Enter your first name"
+                                        required
+                                        autocomplete="given-name"
+                                        aria-required="true"
+                                        aria-describedby="firstNameError"
+                                    >
+                                </div>
+                                <span class="form-error-msg" id="firstNameError" role="alert"></span>
+                            </div>
+
+                            <!-- Last Name -->
+                            <div class="form-group">
+                                <label for="lastName" class="form-label">
+                                    Last Name <span class="required-star">*</span>
+                                </label>
+                                <div class="form-input-wrapper">
+                                    <i class="fa-solid fa-user form-input-icon"></i>
+                                    <input
+                                        type="text"
+                                        id="lastName"
+                                        name="lastName"
+                                        class="form-input"
+                                        placeholder="Enter your last name"
+                                        required
+                                        autocomplete="family-name"
+                                        aria-required="true"
+                                        aria-describedby="lastNameError"
+                                    >
+                                </div>
+                                <span class="form-error-msg" id="lastNameError" role="alert"></span>
+                            </div>
+
+                        </div>
+                        <!-- End Row 1 -->
+
+                        <!-- Row 2: Email + Phone -->
+                        <div class="form-row">
+
+                            <!-- Email Address -->
+                            <div class="form-group">
+                                <label for="emailAddress" class="form-label">
+                                    Email Address <span class="required-star">*</span>
+                                </label>
+                                <div class="form-input-wrapper">
+                                    <i class="fa-solid fa-envelope form-input-icon"></i>
+                                    <input
+                                        type="email"
+                                        id="emailAddress"
+                                        name="emailAddress"
+                                        class="form-input"
+                                        placeholder="e.g. name@email.com"
+                                        required
+                                        autocomplete="email"
+                                        aria-required="true"
+                                        aria-describedby="emailError"
+                                    >
+                                </div>
+                                <span class="form-error-msg" id="emailError" role="alert"></span>
+                            </div>
+
+                            <!-- Phone Number -->
+                            <div class="form-group">
+                                <label for="phoneNumber" class="form-label">
+                                    Phone Number
+                                    <span class="form-label-optional">(Optional)</span>
+                                </label>
+                                <div class="form-input-wrapper">
+                                    <i class="fa-solid fa-phone form-input-icon"></i>
+                                    <input
+                                        type="tel"
+                                        id="phoneNumber"
+                                        name="phoneNumber"
+                                        class="form-input"
+                                        placeholder="e.g. +27 82 000 0000"
+                                        autocomplete="tel"
+                                        aria-describedby="phoneHint"
+                                    >
+                                </div>
+                                <span class="form-hint" id="phoneHint">
+                                    Include country code, e.g. +27 for South Africa
+                                </span>
+                            </div>
+
+                        </div>
+                        <!-- End Row 2 -->
+
+                    </fieldset>
+                    <!-- End Fieldset A -->
+
+
+                    <!-- ---- SECTION B: Enquiry Details ---- -->
+                    <fieldset class="form-fieldset">
+                        <legend class="form-legend">
+                            <i class="fa-solid fa-list-check"></i>
+                            Enquiry Details
+                        </legend>
+
+                        <!-- Row 3: Enquiry Type + Preferred Collection -->
+                        <div class="form-row">
+
+                            <!-- Enquiry Type Dropdown -->
+                            <div class="form-group">
+                                <label for="enquiryType" class="form-label">
+                                    Enquiry Type <span class="required-star">*</span>
+                                </label>
+                                <div class="form-input-wrapper">
+                                    <i class="fa-solid fa-tag form-input-icon"></i>
+                                    <select
+                                        id="enquiryType"
+                                        name="enquiryType"
+                                        class="form-select"
+                                        required
+                                        aria-required="true"
+                                        aria-describedby="enquiryTypeError">
+                                        <option value="" disabled selected>-- Select Enquiry Type --</option>
+                                        <option value="styling-advice">Styling Advice</option>
+                                        <option value="product-availability">Product Availability</option>
+                                        <option value="sizing-information">Sizing Information</option>
+                                        <option value="appointment-request">Appointment Request</option>
+                                        <option value="general-enquiry">General Enquiry</option>
+                                        <option value="complaint-feedback">Complaint / Feedback</option>
+                                    </select>
+                                </div>
+                                <span class="form-error-msg" id="enquiryTypeError" role="alert"></span>
+                            </div>
+
+                            <!-- Preferred Collection Dropdown -->
+                            <div class="form-group">
+                                <label for="preferredCollection" class="form-label">
+                                    Preferred Collection
+                                    <span class="form-label-optional">(Optional)</span>
+                                </label>
+                                <div class="form-input-wrapper">
+                                    <i class="fa-solid fa-layer-group form-input-icon"></i>
+                                    <select
+                                        id="preferredCollection"
+                                        name="preferredCollection"
+                                        class="form-select"
+                                        aria-describedby="collectionHint">
+                                        <option value="" selected>-- Select a Collection --</option>
+                                        <option value="summer">Summer Collection</option>
+                                        <option value="winter">Winter Collection</option>
+                                        <option value="autumn">Autumn Collection</option>
+                                        <option value="spring">Spring Collection</option>
+                                        <option value="office-wear">Office Wear</option>
+                                        <option value="casual-wear">Casual Wear</option>
+                                        <option value="formal-wear">Formal Wear</option>
+                                        <option value="not-applicable">Not Applicable</option>
+                                    </select>
+                                </div>
+                                <span class="form-hint" id="collectionHint">
+                                    Select the collection your enquiry relates to
+                                </span>
+                            </div>
+
+                        </div>
+                        <!-- End Row 3 -->
+
+                        <!-- Row 4: Product Name (Optional) -->
+                        <div class="form-row form-row-single">
+
+                            <!-- Specific Product Name -->
+                            <div class="form-group">
+                                <label for="productName" class="form-label">
+                                    Specific Product Name
+                                    <span class="form-label-optional">(Optional)</span>
+                                </label>
+                                <div class="form-input-wrapper">
+                                    <i class="fa-solid fa-shirt form-input-icon"></i>
+                                    <input
+                                        type="text"
+                                        id="productName"
+                                        name="productName"
+                                        class="form-input"
+                                        placeholder="e.g. Linen Sundress, Tailored Blazer"
+                                        aria-describedby="productNameHint"
+                                    >
+                                </div>
+                                <span class="form-hint" id="productNameHint">
+                                    If your enquiry is about a specific product, please enter the name here
+                                </span>
+                            </div>
+
+                        </div>
+                        <!-- End Row 4 -->
+
+                        <!-- Row 5: Preferred Size + Preferred Colour -->
+                        <div class="form-row">
+
+                            <!-- Preferred Size -->
+                            <div class="form-group">
+                                <label for="preferredSize" class="form-label">
+                                    Preferred Size
+                                    <span class="form-label-optional">(Optional)</span>
+                                </label>
+                                <div class="form-input-wrapper">
+                                    <i class="fa-solid fa-ruler form-input-icon"></i>
+                                    <select
+                                        id="preferredSize"
+                                        name="preferredSize"
+                                        class="form-select">
+                                        <option value="" selected>-- Select Size --</option>
+                                        <option value="xs">XS — Extra Small</option>
+                                        <option value="s">S — Small</option>
+                                        <option value="m">M — Medium</option>
+                                        <option value="l">L — Large</option>
+                                        <option value="xl">XL — Extra Large</option>
+                                        <option value="xxl">XXL — Double Extra Large</option>
+                                        <option value="one-size">One Size</option>
+                                        <option value="unsure">Not Sure / Need Advice</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Preferred Colour -->
+                            <div class="form-group">
+                                <label for="preferredColour" class="form-label">
+                                    Preferred Colour
+                                    <span class="form-label-optional">(Optional)</span>
+                                </label>
+                                <div class="form-input-wrapper">
+                                    <i class="fa-solid fa-palette form-input-icon"></i>
+                                    <select
+                                        id="preferredColour"
+                                        name="preferredColour"
+                                        class="form-select">
+                                        <option value="" selected>-- Select Colour --</option>
+                                        <option value="black">Black</option>
+                                        <option value="white">White</option>
+                                        <option value="beige">Beige / Cream</option>
+                                        <option value="blue">Blue</option>
+                                        <option value="red">Red</option>
+                                        <option value="orange">Orange</option>
+                                        <option value="green">Green</option>
+                                        <option value="grey">Grey</option>
+                                        <option value="gold">Gold</option>
+                                        <option value="no-preference">No Preference</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- End Row 5 -->
+
+                        <!-- Row 6: Preferred Occasion -->
+                        <div class="form-row form-row-single">
+
+                            <!-- Preferred Occasion -->
+                            <div class="form-group">
+                                <label for="preferredOccasion" class="form-label">
+                                    Occasion / Style Preference
+                                    <span class="form-label-optional">(Optional)</span>
+                                </label>
+                                <div class="form-input-wrapper">
+                                    <i class="fa-solid fa-calendar-days form-input-icon"></i>
+                                    <select
+                                        id="preferredOccasion"
+                                        name="preferredOccasion"
+                                        class="form-select">
+                                        <option value="" selected>-- Select Occasion --</option>
+                                        <option value="office-work">Office / Workplace</option>
+                                        <option value="casual-everyday">Casual / Everyday</option>
+                                        <option value="formal-event">Formal Event</option>
+                                        <option value="wedding-guest">Wedding Guest</option>
+                                        <option value="garden-party">Garden Party</option>
+                                        <option value="date-night">Date Night</option>
+                                        <option value="holiday-travel">Holiday / Travel</option>
+                                        <option value="graduation">Graduation</option>
+                                        <option value="not-applicable">Not Applicable</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- End Row 6 -->
+
+                        <!-- Row 7: Message / Description -->
+                        <div class="form-row form-row-single">
+
+                            <!-- Message Textarea -->
+                            <div class="form-group">
+                                <label for="enquiryMessage" class="form-label">
+                                    Message / Description <span class="required-star">*</span>
+                                </label>
+                                <div class="form-textarea-wrapper">
+                                    <textarea
+                                        id="enquiryMessage"
+                                        name="enquiryMessage"
+                                        class="form-textarea"
+                                        rows="6"
+                                        placeholder="Please describe what you need help with. Include as much detail as possible about the product, occasion, or question you have..."
+                                        required
+                                        minlength="10"
+                                        maxlength="1000"
+                                        aria-required="true"
+                                        aria-describedby="messageError messageCount"
+                                    ></textarea>
+                                </div>
+                                <div class="form-textarea-footer">
+                                    <span class="form-error-msg" id="messageError" role="alert"></span>
+                                    <span class="form-char-count" id="messageCount">0 / 1000</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- End Row 7 -->
+
+                    </fieldset>
+                    <!-- End Fieldset B -->
+
+
+                    <!-- ---- SECTION C: Appointment Preference ---- -->
+                    <fieldset class="form-fieldset" id="appointmentFieldset">
+                        <legend class="form-legend">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            Appointment Preference
+                            <span class="form-legend-optional">(Optional)</span>
+                        </legend>
+
+                        <!-- Preferred Date -->
+                        <div class="form-row">
+
+                            <div class="form-group">
+                                <label for="preferredDate" class="form-label">
+                                    Preferred Appointment Date
+                                </label>
+                                <div class="form-input-wrapper">
+                                    <i class="fa-solid fa-calendar form-input-icon"></i>
+                                    <input
+                                        type="date"
+                                        id="preferredDate"
+                                        name="preferredDate"
+                                        class="form-input"
+                                        aria-describedby="dateHint"
+                                    >
+                                </div>
+                                <span class="form-hint" id="dateHint">
+                                    Appointments are available Mon–Sat, subject to availability
+                                </span>
+                            </div>
+
+                            <!-- Preferred Time -->
+                            <div class="form-group">
+                                <label for="preferredTime" class="form-label">
+                                    Preferred Appointment Time
+                                </label>
+                                <div class="form-input-wrapper">
+                                    <i class="fa-solid fa-clock form-input-icon"></i>
+                                    <select
+                                        id="preferredTime"
+                                        name="preferredTime"
+                                        class="form-select">
+                                        <option value="" selected>-- Select Time Slot --</option>
+                                        <option value="09:00">09:00 — Morning</option>
+                                        <option value="10:00">10:00 — Morning</option>
+                                        <option value="11:00">11:00 — Late Morning</option>
+                                        <option value="12:00">12:00 — Midday</option>
+                                        <option value="13:00">13:00 — Early Afternoon</option>
+                                        <option value="14:00">14:00 — Afternoon</option>
+                                        <option value="15:00">15:00 — Afternoon</option>
+                                        <option value="16:00">16:00 — Late Afternoon</option>
+                                        <option value="17:00">17:00 — Early Evening</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Preferred Store Location -->
+                        <div class="form-row form-row-single">
+                            <div class="form-group">
+                                <label for="preferredStore" class="form-label">
+                                    Preferred Store Location
+                                </label>
+                                <div class="form-input-wrapper">
+                                    <i class="fa-solid fa-store form-input-icon"></i>
+                                    <select
+                                        id="preferredStore"
+                                        name="preferredStore"
+                                        class="form-select">
+                                        <option value="" selected>-- Select Store Location --</option>
+                                        <option value="sandton">Sandton City Branch — Sandton, Johannesburg</option>
+                                        <option value="rosebank">The Zone Branch — Rosebank, Johannesburg</option>
+                                        <option value="online">Online Consultation (via Email / Phone)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                    <!-- End Fieldset C -->
+
+                    <!-- ---- SECTION D: Terms and Submit ---- -->
+                    <fieldset class="form-fieldset form-fieldset-noborder">
+                        <legend class="visually-hidden">Terms and Submission</legend>
+
+                        <!-- Terms and Conditions Checkbox -->
+                        <div class="form-checkbox-group">
+                            <label class="form-checkbox-label" for="agreeTerms">
+                                <input
+                                    type="checkbox"
+                                    id="agreeTerms"
+                                    name="agreeTerms"
+                                    class="form-checkbox"
+                                    required
+                                    aria-required="true"
+                                    aria-describedby="termsError"
+                                >
+                                <span class="form-checkbox-custom"></span>
+                                <span class="form-checkbox-text">
+                                    I agree that Sphere Style Boutique may contact me 
+                                    regarding my enquiry via the email address or phone 
+                                    number provided. I have read and accept the 
+                                    <a href="#" class="form-link" target="_blank">Privacy Policy</a>
+                                    and
+                                    <a href="#" class="form-link" target="_blank">Terms of Use</a>.
+                                    <span class="required-star">*</span>
+                                </span>
+                            </label>
+                            <span class="form-error-msg" id="termsError" role="alert"></span>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-submit-row">
+                            <button
+                                type="submit"
+                                class="btn btn-submit"
+                                id="submitEnquiryBtn"
+                                aria-label="Submit your enquiry to Sphere Style Boutique">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                Submit Enquiry
+                            </button>
+                            <button
+                                type="reset"
+                                class="btn btn-reset"
+                                id="resetFormBtn"
+                                aria-label="Clear and reset the enquiry form">
+                                <i class="fa-solid fa-rotate-left"></i>
+                                Clear Form
+                            </button>
+                        </div>
+
+                        <!-- Form Privacy Note -->
+                        <p class="form-privacy-note">
+                            <i class="fa-solid fa-lock"></i>
+                            Your personal information is kept secure and will never be 
+                            shared with third parties. View our 
+                            <a href="#" class="form-link">Privacy Policy</a> for details.
+                        </p>
+
+                    </fieldset>
+                    <!-- End Fieldset D -->
+
+                </form>
+                <!-- End Enquiry Form -->
+
+            </div>
+            <!-- End Left Column (Form) -->
+
+            
