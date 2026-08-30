@@ -340,3 +340,522 @@
 
     </div>
 </section>
+
+    <!--Contact Form and Sidebar-->
+<section class="contact-form-section" id="contact-form-section">
+    <div class="section-container">
+
+        <div class="contact-layout">
+
+            <!-- Left Column - Contact Form-->
+            <div class="contact-form-col">
+
+                <!-- Section Header -->
+                <div class="form-section-header">
+                    <p class="section-label">Drop Us a Message</p>
+                    <h2 class="section-title">Send Us a Message</h2>
+                    <p class="section-subtitle">
+                        Use this form for general queries, media enquiries, 
+                        or feedback. All fields marked with
+                        <span class="required-star">*</span> are required.
+                    </p>
+                </div>
+
+                <!-- Success Message (Hidden by default — shown by JS on valid submit) -->
+                <div class="form-success-message" id="contactSuccessMessage" style="display: none;" role="alert">
+                    <div class="form-success-content">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div class="form-success-text">
+                            <h3>Message Sent Successfully!</h3>
+                            <p>
+                                Thank you for contacting Sphere Style Boutique. 
+                                We have received your message and will get back to 
+                                you as soon as possible.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Error Summary (Hidden by default — shown by JS on invalid submit) -->
+                <div class="form-error-summary" id="contactErrorSummary" style="display: none;" role="alert">
+                    <div class="form-error-summary-content">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <div>
+                            <h3>Please fix the following errors:</h3>
+                            <ul id="contactErrorList"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Contact Form-->
+                <form
+                    class="contact-form"
+                    id="contactForm"
+                    novalidate
+                    aria-label="General contact form">
+
+                    <!-- Row 1 — Full Name + Email -->
+                    <div class="form-row">
+
+                        <!-- Full Name -->
+                        <div class="form-group">
+                            <label for="contactFullName" class="form-label">
+                                Full Name <span class="required-star">*</span>
+                            </label>
+                            <div class="form-input-wrapper">
+                                <i class="fa-solid fa-user form-input-icon"></i>
+                                <input
+                                    type="text"
+                                    id="contactFullName"
+                                    name="contactFullName"
+                                    class="form-input"
+                                    placeholder="Enter your full name"
+                                    required
+                                    autocomplete="name"
+                                    aria-required="true"
+                                    aria-describedby="contactFullNameError"
+                                >
+                            </div>
+                            <span class="form-error-msg" id="contactFullNameError" role="alert"></span>
+                        </div>
+
+                        <!-- Email Address -->
+                        <div class="form-group">
+                            <label for="contactEmail" class="form-label">
+                                Email Address <span class="required-star">*</span>
+                            </label>
+                            <div class="form-input-wrapper">
+                                <i class="fa-solid fa-envelope form-input-icon"></i>
+                                <input
+                                    type="email"
+                                    id="contactEmail"
+                                    name="contactEmail"
+                                    class="form-input"
+                                    placeholder="e.g. name@email.com"
+                                    required
+                                    autocomplete="email"
+                                    aria-required="true"
+                                    aria-describedby="contactEmailError"
+                                >
+                            </div>
+                            <span class="form-error-msg" id="contactEmailError" role="alert"></span>
+                        </div>
+
+                    </div>
+                    <!-- End Row 1 -->
+
+                    <!-- Row 2 — Phone + Subject -->
+                    <div class="form-row">
+
+                        <!-- Phone Number -->
+                        <div class="form-group">
+                            <label for="contactPhone" class="form-label">
+                                Phone Number
+                                <span class="form-label-optional">(Optional)</span>
+                            </label>
+                            <div class="form-input-wrapper">
+                                <i class="fa-solid fa-phone form-input-icon"></i>
+                                <input
+                                    type="tel"
+                                    id="contactPhone"
+                                    name="contactPhone"
+                                    class="form-input"
+                                    placeholder="e.g. +27 82 000 0000"
+                                    autocomplete="tel"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Subject -->
+                        <div class="form-group">
+                            <label for="contactSubject" class="form-label">
+                                Subject <span class="required-star">*</span>
+                            </label>
+                            <div class="form-input-wrapper">
+                                <i class="fa-solid fa-pen form-input-icon"></i>
+                                <input
+                                    type="text"
+                                    id="contactSubject"
+                                    name="contactSubject"
+                                    class="form-input"
+                                    placeholder="e.g. Product query, Store feedback"
+                                    required
+                                    aria-required="true"
+                                    aria-describedby="contactSubjectError"
+                                >
+                            </div>
+                            <span class="form-error-msg" id="contactSubjectError" role="alert"></span>
+                        </div>
+
+                    </div>
+                    <!-- End Row 2 -->
+
+                    <!-- Row 3 — Message Type Dropdown -->
+                    <div class="form-row form-row-single">
+
+                        <!-- Message Category -->
+                        <div class="form-group">
+                            <label for="messageCategory" class="form-label">
+                                Message Category
+                                <span class="form-label-optional">(Optional)</span>
+                            </label>
+                            <div class="form-input-wrapper">
+                                <i class="fa-solid fa-tag form-input-icon"></i>
+                                <select
+                                    id="messageCategory"
+                                    name="messageCategory"
+                                    class="form-select">
+                                    <option value="" selected>-- Select Category --</option>
+                                    <option value="general-query">General Query</option>
+                                    <option value="product-feedback">Product Feedback</option>
+                                    <option value="store-feedback">Store / Service Feedback</option>
+                                    <option value="media-press">Media / Press Enquiry</option>
+                                    <option value="collaboration">Brand Collaboration</option>
+                                    <option value="complaint">Complaint</option>
+                                    <option value="compliment">Compliment</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- End Row 3 -->
+
+                    <!-- Row 4 — Store Branch Selection -->
+                    <div class="form-row form-row-single">
+
+                        <!-- Relevant Store Branch -->
+                        <div class="form-group">
+                            <label for="contactBranch" class="form-label">
+                                Relevant Store Branch
+                                <span class="form-label-optional">(Optional)</span>
+                            </label>
+                            <div class="form-input-wrapper">
+                                <i class="fa-solid fa-store form-input-icon"></i>
+                                <select
+                                    id="contactBranch"
+                                    name="contactBranch"
+                                    class="form-select">
+                                    <option value="" selected>-- Select Branch --</option>
+                                    <option value="sandton">Sandton City Branch</option>
+                                    <option value="general">General / Not Branch Specific</option>
+                                    <option value="online">Online / Website</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- End Row 4 -->
+
+                    <!-- Row 5 — Message Textarea -->
+                    <div class="form-row form-row-single">
+
+                        <!-- Message -->
+                        <div class="form-group">
+                            <label for="contactMessage" class="form-label">
+                                Message <span class="required-star">*</span>
+                            </label>
+                            <div class="form-textarea-wrapper">
+                                <textarea
+                                    id="contactMessage"
+                                    name="contactMessage"
+                                    class="form-textarea"
+                                    rows="7"
+                                    placeholder="Write your message here. Please be as detailed as possible so we can assist you effectively..."
+                                    required
+                                    minlength="10"
+                                    maxlength="1500"
+                                    aria-required="true"
+                                    aria-describedby="contactMessageError contactMessageCount"
+                                ></textarea>
+                            </div>
+                            <div class="form-textarea-footer">
+                                <span class="form-error-msg" id="contactMessageError" role="alert"></span>
+                                <span class="form-char-count" id="contactMessageCount">0 / 1500</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- End Row 5 -->
+
+                    <!-- Row 6 — Terms Checkbox -->
+                    <div class="form-checkbox-group">
+                        <label class="form-checkbox-label" for="contactAgreeTerms">
+                            <input
+                                type="checkbox"
+                                id="contactAgreeTerms"
+                                name="contactAgreeTerms"
+                                class="form-checkbox"
+                                required
+                                aria-required="true"
+                                aria-describedby="contactTermsError"
+                            >
+                            <span class="form-checkbox-custom"></span>
+                            <span class="form-checkbox-text">
+                                I agree that Sphere Style Boutique may contact me 
+                                regarding my message via the email or phone number 
+                                provided. I have read and accept the
+                                <a href="#" class="form-link" target="_blank">Privacy Policy</a>
+                                and
+                                <a href="#" class="form-link" target="_blank">Terms of Use</a>.
+                                <span class="required-star">*</span>
+                            </span>
+                        </label>
+                        <span class="form-error-msg" id="contactTermsError" role="alert"></span>
+                    </div>
+
+                    <!-- Submit and Reset Buttons -->
+                    <div class="form-submit-row">
+                        <button
+                            type="submit"
+                            class="btn btn-submit"
+                            id="submitContactBtn"
+                            aria-label="Send your message to Sphere Style Boutique">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                        <button
+                            type="reset"
+                            class="btn btn-reset"
+                            id="resetContactBtn"
+                            aria-label="Clear and reset the contact form">
+                            <i class="fa-solid fa-rotate-left"></i>
+                            Clear Form
+                        </button>
+                    </div>
+
+                    <!-- Privacy Note -->
+                    <p class="form-privacy-note">
+                        <i class="fa-solid fa-lock"></i>
+                        Your information is kept secure and will never be shared 
+                        with third parties. View our
+                        <a href="#" class="form-link">Privacy Policy</a> for more details.
+                    </p>
+                    <!--End Row 6-->
+                </form>
+                <!-- End Contact Form -->
+
+            </div>
+            <!-- End Left Column (Form) -->
+
+            <!-- Right Column - Contact Sidebar-->
+                         <aside class="contact-sidebar-col" aria-label="Additional contact information and social media">
+
+                <!-- Sidebar Card 1 — Direct Contact -->
+                <div class="contact-sidebar-card">
+                    <div class="contact-sidebar-card-header">
+                        <i class="fa-solid fa-headset"></i>
+                        <h3>Get in Touch Directly</h3>
+                    </div>
+                    <ul class="contact-sidebar-list">
+                        <li>
+                            <div class="contact-sidebar-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="contact-sidebar-info">
+                                <span class="contact-sidebar-label">Main Line</span>
+                                <a href="tel:+27110000000" class="contact-sidebar-value">
+                                    +27 11 000 0000
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-sidebar-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="contact-sidebar-info">
+                                <span class="contact-sidebar-label">Sandton Branch</span>
+                                <a href="tel:+27110000001" class="contact-sidebar-value">
+                                    +27 11 000 0001
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-sidebar-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="contact-sidebar-info">
+                                <span class="contact-sidebar-label">Rosebank Branch</span>
+                                <a href="tel:+27110000002" class="contact-sidebar-value">
+                                    +27 11 000 0002
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-sidebar-icon">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-sidebar-info">
+                                <span class="contact-sidebar-label">WhatsApp</span>
+                                <a href="https://wa.me/27820000000" target="_blank" rel="noopener noreferrer" class="contact-sidebar-value">
+                                    +27 82 000 0000
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-sidebar-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="contact-sidebar-info">
+                                <span class="contact-sidebar-label">General Email</span>
+                                <a href="mailto:info@spherestyle.co.za" class="contact-sidebar-value">
+                                    info@spherestyle.co.za
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-sidebar-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="contact-sidebar-info">
+                                <span class="contact-sidebar-label">Sandton Email</span>
+                                <a href="mailto:sandton@spherestyle.co.za" class="contact-sidebar-value">
+                                    sandton@spherestyle.co.za
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-sidebar-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="contact-sidebar-info">
+                                <span class="contact-sidebar-label">Rosebank Email</span>
+                                <a href="mailto:rosebank@spherestyle.co.za" class="contact-sidebar-value">
+                                    rosebank@spherestyle.co.za
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-sidebar-icon">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <div class="contact-sidebar-info">
+                                <span class="contact-sidebar-label">Website</span>
+                                <a href="https://www.spherestyle.co.za" target="_blank" rel="noopener noreferrer" class="contact-sidebar-value">
+                                    www.spherestyle.co.za
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Sidebar Card 2 — Trading Hours -->
+                <div class="contact-sidebar-card">
+                    <div class="contact-sidebar-card-header">
+                        <i class="fa-solid fa-clock"></i>
+                        <h3>Trading Hours</h3>
+                    </div>
+                    <div class="contact-hours-table">
+                        <div class="contact-hours-row">
+                            <span class="contact-hours-day">Monday</span>
+                            <span class="contact-hours-time">09:00 – 18:00</span>
+                        </div>
+                        <div class="contact-hours-row">
+                            <span class="contact-hours-day">Tuesday</span>
+                            <span class="contact-hours-time">09:00 – 18:00</span>
+                        </div>
+                        <div class="contact-hours-row">
+                            <span class="contact-hours-day">Wednesday</span>
+                            <span class="contact-hours-time">09:00 – 18:00</span>
+                        </div>
+                        <div class="contact-hours-row">
+                            <span class="contact-hours-day">Thursday</span>
+                            <span class="contact-hours-time">09:00 – 18:00</span>
+                        </div>
+                        <div class="contact-hours-row">
+                            <span class="contact-hours-day">Friday</span>
+                            <span class="contact-hours-time">09:00 – 18:00</span>
+                        </div>
+                        <div class="contact-hours-row">
+                            <span class="contact-hours-day">Saturday</span>
+                            <span class="contact-hours-time">09:00 – 17:00</span>
+                        </div>
+                        <div class="contact-hours-row">
+                            <span class="contact-hours-day">Sunday</span>
+                            <span class="contact-hours-time">10:00 – 15:00</span>
+                        </div>
+                        <div class="contact-hours-row contact-hours-row-highlight">
+                            <span class="contact-hours-day">Public Holidays</span>
+                            <span class="contact-hours-time">10:00 – 14:00</span>
+                        </div>
+                    </div>
+                    <p class="contact-hours-note">
+                        <i class="fa-solid fa-circle-info"></i>
+                        Hours may vary on public holidays. Please call ahead to confirm.
+                    </p>
+                </div>
+
+                <!-- Sidebar Card 3 — Social Media -->
+                <div class="contact-sidebar-card">
+                    <div class="contact-sidebar-card-header">
+                        <i class="fa-solid fa-share-nodes"></i>
+                        <h3>Follow Us Online</h3>
+                    </div>
+                    <p class="contact-social-text">
+                        Stay connected with Sphere Style Boutique for the latest 
+                        collections, styling tips, and exclusive promotions.
+                    </p>
+                    <div class="contact-social-grid">
+                        <a href="#" class="contact-social-btn contact-social-instagram" aria-label="Follow Sphere Style Boutique on Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                            <span>@spherestyleboutique</span>
+                        </a>
+                        <a href="#" class="contact-social-btn contact-social-facebook" aria-label="Follow Sphere Style Boutique on Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <span>Sphere Style Boutique</span>
+                        </a>
+                        <a href="#" class="contact-social-btn contact-social-pinterest" aria-label="Follow Sphere Style Boutique on Pinterest">
+                            <i class="fa-brands fa-pinterest-p"></i>
+                            <span>@spherestyle</span>
+                        </a>
+                        <a href="#" class="contact-social-btn contact-social-twitter" aria-label="Follow Sphere Style Boutique on Twitter / X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                            <span>@spherestyle</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sidebar Card 4 — Quick Links -->
+                <div class="contact-sidebar-card">
+                    <div class="contact-sidebar-card-header">
+                        <i class="fa-solid fa-link"></i>
+                        <h3>Helpful Links</h3>
+                    </div>
+                    <ul class="contact-helpful-links">
+                        <li>
+                            <a href="enquiry.html">
+                                <i class="fa-solid fa-chevron-right"></i>
+                                Submit a Styling Enquiry
+                            </a>
+                        </li>
+                        <li>
+                            <a href="products.html">
+                                <i class="fa-solid fa-chevron-right"></i>
+                                Browse Our Collections
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about.html">
+                                <i class="fa-solid fa-chevron-right"></i>
+                                About Sphere Style Boutique
+                            </a>
+                        </li>
+                        <li>
+                            <a href="enquiry.html">
+                                <i class="fa-solid fa-chevron-right"></i>
+                                Book a Styling Appointment
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </aside>
+            <!-- End Right Column (Sidebar) -->
+
+        </div>
+        <!-- End Contact Layout -->
+
+    </div>
+</section>
+
+    <!---->
