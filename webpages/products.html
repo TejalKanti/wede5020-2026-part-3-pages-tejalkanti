@@ -1013,4 +1013,317 @@
 
         </div>
         <!-- End Products Grid -->
-         
+
+        <!-- No Results Message (Hidden by default, shown by JS when no filter matches) -->
+        <div class="no-results" id="noResults" style="display: none;">
+            <div class="no-results-content">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h3>No Products Found</h3>
+                <p>No products match your current filter selection. Please try a different combination.</p>
+                <button class="btn btn-primary" id="clearFiltersNoResults">
+                    <i class="fa-solid fa-rotate-left"></i> Reset Filters
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <!--Outfit Library Combo's-->
+    <section class="outfit-library" id="outfit-library">
+    <div class="section-container">
+
+        <!-- Section Header -->
+        <div class="section-header">
+            <p class="section-label">Staff Curated Looks</p>
+            <h2 class="section-title">Complete Outfit Combinations</h2>
+            <p class="section-subtitle">
+                Every piece in these looks is available in store and online. 
+                Enquire about any look for personalized sizing and styling advice.
+            </p>
+        </div>
+
+        <!-- Outfit Combinations Grid -->
+        <div class="outfit-library-grid">
+
+            <!-- Outfit 1 — The Power Office Look -->
+            <article class="outfit-library-card" id="office">
+                <div class="outfit-library-image-wrapper">
+                    <img
+                        src="images/outfits/office-look.jpg"
+                        alt="The Power Office Look — blazer, trousers, and pointed heels"
+                        class="outfit-library-image"
+                        loading="lazy"
+                    >
+                    <div class="outfit-library-overlay">
+                        <span class="outfit-overlay-label">Office Wear — Winter</span>
+                    </div>
+                </div>
+                <div class="outfit-library-body">
+                    <h3 class="outfit-library-title">The Power Office Look</h3>
+                    <p class="outfit-library-occasion">
+                        <i class="fa-solid fa-briefcase"></i> Occasion: Office / Workplace
+                        &nbsp;|&nbsp;
+                        <i class="fa-solid fa-snowflake"></i> Season: Winter
+                    </p>
+                    <ul class="outfit-library-items">
+                        <li>
+                            <span class="outfit-item-name">Tailored Blazer</span>
+                            <span class="outfit-item-price">R 1,299.00</span>
+                        </li>
+                        <li>
+                            <span class="outfit-item-name">High-Rise Trousers</span>
+                            <span class="outfit-item-price">R 799.00</span>
+                        </li>
+                        <li>
+                            <span class="outfit-item-name">Pointed Heels</span>
+                            <span class="outfit-item-price">R 899.00</span>
+                        </li>
+                    </ul>
+                    <div class="outfit-library-footer">
+                        <div class="outfit-library-total">
+                            <span>Total Look:</span>
+                            <strong>R 2,997.00</strong>
+                        </div>
+                        <a href="enquiry.html" class="btn btn-primary">
+                            <i class="fa-solid fa-envelope"></i> Enquire About This Look
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Outfit 2 — Weekend Casual -->
+            <article class="outfit-library-card" id="casual">
+                <div class="outfit-library-image-wrapper">
+                    <img
+                        src="images/outfits/casual-look.jpg"
+                        alt="Weekend Casual Look — sundress, sneakers, and straw bag"
+                        class="outfit-library-image"
+                        loading="lazy"
+                    >
+                    <div class="outfit-library-overlay">
+                        <span class="outfit-overlay-label">Casual Wear — Summer</span>
+                    </div>
+                </div>
+                <div class="outfit-library-body">
+                    <h3 class="outfit-library-title">Weekend Casual</h3>
+                    <p class="outfit-library-occasion">
+                        <i class="fa-solid fa-peace"></i> Occasion: Casual / Weekend
+                        &nbsp;|&nbsp;
+                        <i class="fa-solid fa-sun"></i> Season: Summer
+                    </p>
+                    <ul class="outfit-library-items">
+                        <li>
+                            <span class="outfit-item-name">Linen Sundress</span>
+                            <span class="outfit-item-price">R 599.00</span>
+                        </li>
+                        <li>
+                            <span class="outfit-item-name">White Sneakers</span>
+                            <span class="outfit-item-price">R 699.00</span>
+                        </li>
+                        <li>
+                            <span class="outfit-item-name">Straw Bag</span>
+                            <span class="outfit-item-price">R 349.00</span>
+                        </li>
+                    </ul>
+                    <div class="outfit-library-footer">
+                        <div class="outfit-library-total">
+                            <span>Total Look:</span>
+                            <strong>R 1,647.00</strong>
+                        </div>
+                        <a href="enquiry.html" class="btn btn-primary">
+                            <i class="fa-solid fa-envelope"></i> Enquire About This Look
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Outfit 3 — Black Tie Ready -->
+            <article class="outfit-library-card" id="formal">
+                <div class="outfit-library-image-wrapper">
+                    <img
+                        src="images/outfits/formal-look.jpg"
+                        alt="Black Tie Ready — evening gown, clutch bag, and stilettos"
+                        class="outfit-library-image"
+                        loading="lazy"
+                    >
+                    <div class="outfit-library-overlay">
+                        <span class="outfit-overlay-label">Formal Wear — Winter</span>
+                    </div>
+                </div>
+                <div class="outfit-library-body">
+                    <h3 class="outfit-library-title">Black Tie Ready</h3>
+                    <p class="outfit-library-occasion">
+                        <i class="fa-solid fa-crown"></i> Occasion: Formal / Events
+                        &nbsp;|&nbsp;
+                        <i class="fa-solid fa-snowflake"></i> Season: Winter
+                    </p>
+                    <ul class="outfit-library-items">
+                        <li>
+                            <span class="outfit-item-name">Evening Gown</span>
+                            <span class="outfit-item-price">R 2,199.00</span>
+                        </li>
+                        <li>
+                            <span class="outfit-item-name">Clutch Bag</span>
+                            <span class="outfit-item-price">R 549.00</span>
+                        </li>
+                        <li>
+                            <span class="outfit-item-name">Stilettos</span>
+                            <span class="outfit-item-price">R 1,099.00</span>
+                        </li>
+                    </ul>
+                    <div class="outfit-library-footer">
+                        <div class="outfit-library-total">
+                            <span>Total Look:</span>
+                            <strong>R 3,847.00</strong>
+                        </div>
+                        <a href="enquiry.html" class="btn btn-primary">
+                            <i class="fa-solid fa-envelope"></i> Enquire About This Look
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Outfit 4 — Autumn Warmth -->
+            <article class="outfit-library-card" id="autumn">
+                <div class="outfit-library-image-wrapper">
+                    <img
+                        src="images/outfits/autumn-look.jpg"
+                        alt="Autumn Warmth — wrap skirt, cardigan, and ankle boots"
+                        class="outfit-library-image"
+                        loading="lazy"
+                    >
+                    <div class="outfit-library-overlay">
+                        <span class="outfit-overlay-label">Casual Wear — Autumn</span>
+                    </div>
+                </div>
+                <div class="outfit-library-body">
+                    <h3 class="outfit-library-title">Autumn Warmth</h3>
+                    <p class="outfit-library-occasion">
+                        <i class="fa-solid fa-peace"></i> Occasion: Casual / Everyday
+                        &nbsp;|&nbsp;
+                        <i class="fa-solid fa-leaf"></i> Season: Autumn
+                    </p>
+                    <ul class="outfit-library-items">
+                        <li>
+                            <span class="outfit-item-name">Floral Wrap Skirt</span>
+                            <span class="outfit-item-price">R 450.00</span>
+                        </li>
+                        <li>
+                            <span class="outfit-item-name">Knit Cardigan</span>
+                            <span class="outfit-item-price">R 549.00</span>
+                        </li>
+                        <li>
+                            <span class="outfit-item-name">Ankle Boots</span>
+                            <span class="outfit-item-price">R 1,099.00</span>
+                        </li>
+                    </ul>
+                    <div class="outfit-library-footer">
+                        <div class="outfit-library-total">
+                            <span>Total Look:</span>
+                            <strong>R 2,098.00</strong>
+                        </div>
+                        <a href="enquiry.html" class="btn btn-primary">
+                            <i class="fa-solid fa-envelope"></i> Enquire About This Look
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Outfit 5 — Spring Professional -->
+            <article class="outfit-library-card" id="spring">
+                <div class="outfit-library-image-wrapper">
+                    <img
+                        src="images/outfits/spring-office.jpg"
+                        alt="Spring Professional — pastel blazer, wide-leg trousers, and loafers"
+                        class="outfit-library-image"
+                        loading="lazy"
+                    >
+                    <div class="outfit-library-overlay">
+                        <span class="outfit-overlay-label">Office Wear — Spring</span>
+                    </div>
+                </div>
+                <div class="outfit-library-body">
+                    <h3 class="outfit-library-title">Spring Professional</h3>
+                    <p class="outfit-library-occasion">
+                        <i class="fa-solid fa-briefcase"></i> Occasion: Office / Workplace
+                        &nbsp;|&nbsp;
+                        <i class="fa-solid fa-seedling"></i> Season: Spring
+                    </p>
+                    <ul class="outfit-library-items">
+                        <li>
+                            <span class="outfit-item-name">Pastel Blazer</span>
+                            <span class="outfit-item-price">R 1,199.00</span>
+                        </li>
+                        <li>
+                            <span class="outfit-item-name">Wide-Leg Trousers</span>
+                            <span class="outfit-item-price">R 849.00</span>
+                        </li>
+                        <li>
+                            <span class="outfit-item-name">Loafers</span>
+                            <span class="outfit-item-price">R 799.00</span>
+                        </li>
+                    </ul>
+                    <div class="outfit-library-footer">
+                        <div class="outfit-library-total">
+                            <span>Total Look:</span>
+                            <strong>R 2,847.00</strong>
+                        </div>
+                        <a href="enquiry.html" class="btn btn-primary">
+                            <i class="fa-solid fa-envelope"></i> Enquire About This Look
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Outfit 6 — Summer Elegance -->
+            <article class="outfit-library-card" id="summer">
+                <div class="outfit-library-image-wrapper">
+                    <img
+                        src="images/outfits/summer-formal.jpg"
+                        alt="Summer Elegance — floral midi dress, strappy heels, and beaded clutch"
+                        class="outfit-library-image"
+                        loading="lazy"
+                    >
+                    <div class="outfit-library-overlay">
+                        <span class="outfit-overlay-label">Formal Wear — Summer</span>
+                    </div>
+                </div>
+                <div class="outfit-library-body">
+                    <h3 class="outfit-library-title">Summer Elegance</h3>
+                    <p class="outfit-library-occasion">
+                        <i class="fa-solid fa-crown"></i> Occasion: Formal / Garden Party
+                        &nbsp;|&nbsp;
+                        <i class="fa-solid fa-sun"></i> Season: Summer
+                    </p>
+                    <ul class="outfit-library-items">
+                        <li>
+                            <span class="outfit-item-name">Floral Midi Dress</span>
+                            <span class="outfit-item-price">R 1,499.00</span>
+                        </li>
+                        <li>
+                            <span class="outfit-item-name">Strappy Heels</span>
+                            <span class="outfit-item-price">R 999.00</span>
+                        </li>
+                        <li>
+                            <span class="outfit-item-name">Beaded Clutch</span>
+                            <span class="outfit-item-price">R 649.00</span>
+                        </li>
+                    </ul>
+                    <div class="outfit-library-footer">
+                        <div class="outfit-library-total">
+                            <span>Total Look:</span>
+                            <strong>R 3,147.00</strong>
+                        </div>
+                        <a href="enquiry.html" class="btn btn-primary">
+                            <i class="fa-solid fa-envelope"></i> Enquire About This Look
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+        <!-- End Outfit Library Grid -->
+
+    </div>
+</section>
