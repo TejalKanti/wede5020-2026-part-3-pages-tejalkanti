@@ -118,3 +118,49 @@
         </div>
     </div>
 </section>
+
+  <!--Main Enquiry Form-->
+  <section class="enquiry-form-section" id="enquiry-form-section">
+    <div class="section-container">
+
+        <div class="enquiry-layout">
+
+            <!-- Left Column — ENQUIRY FORM-->
+            <div class="enquiry-form-col">
+
+                <!-- Section Header -->
+                <div class="form-section-header">
+                    <p class="section-label">Send Us a Message</p>
+                    <h2 class="section-title">Submit an Enquiry</h2>
+                    <p class="section-subtitle">
+                        Please fill in all required fields marked with 
+                        <span class="required-star">*</span> and our 
+                        styling team will be in touch shortly.
+                    </p>
+                </div>
+
+                <!-- Success Message (Hidden by default — shown by JS on valid submit) -->
+                <div class="form-success-message" id="formSuccessMessage" style="display: none;" role="alert">
+                    <div class="form-success-content">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div class="form-success-text">
+                            <h3>Enquiry Submitted Successfully!</h3>
+                            <p>
+                                Thank you for reaching out to Sphere Style Boutique. 
+                                Our styling team will respond to your enquiry within 
+                                24 hours on business days.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Error Summary (Hidden by default — shown by JS on invalid submit) -->
+                <div class="form-error-summary" id="formErrorSummary" style="display: none;" role="alert">
+                    <div class="form-error-summary-content">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <div>
+                            <h3>Please fix the following errors:</h3>
+                            <ul id="errorList"></ul>
+                        </div>
+                    </div>
+                </div>
