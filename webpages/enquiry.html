@@ -5,76 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!HTML Code Downloaded Image>
     <link rel="icon" type="image/x-icon" href="/images/icons/icons8-questions.png">
+        <meta name="description" content="Submit an enquiry to Sphere Style Boutique.">
     <title>Enquiry</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    <nav>
-        <a href="index.html" target="_blank">Home</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="about.html" target="_blank">About Us</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="products.html" target="_blank">Products</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="enquiry.html" target="_blank">Enquiry</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="contact.html" target="_blank">Contact Us</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-    </nav>
-    <hr>
-    <h1>Enquiry</h1>
-    <br>
-    <h2>Form </h2>
-    <br>
-    <form action="results.html" method="GET" enctype="multipart/form-data">
-        <div>
-          <label for="name">Name</label>
-          <input type="text" name="name" id="name" required>
-        </div>
-        <br>
-        <div>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" required>
-        </div>
-        <br>
-        <div>
-            <label for="age">Age</label>
-            <input type="number" name="age" id="age" min="1" max="200" step="5">
-        </div>
-        <br>
-        <div>
-            <label for="date">Birthdate</label>
-            <input type="date" name="date" id="date" min="2019-06-10">
-        </div>
-        <br>
-      <div>
-        <h4>Gender</h4>
-        <div>
-          <label for="male">Male</label>
-          <input type="radio" name="gender" id="male" value="male">
-        </div>
-        <div>
-          <label for="female">Female</label>
-          <input type="radio" name="gender" id="female" value="female">
-        </div>
-        <div>
-          <label for="rathernotsay">Rather Not Say</label>
-          <input type="radio" name="gender" id="rathernotsay" value="rathernotsay">
-        </div>
-        </div>
-      <br>
-      <div>
-        <label for="phone">Phone</label>
-        <input type="tel" name="phone" id="phone">
-      </div>
-        <br>
-      <div>
-        <label for="bio">Description</label>
-        <textarea id="Description" name="Description"></textarea>
-      </div>
-      <br>
-      <button type="reset">Reset</button>
-      <button type="submit">Submit</button>
-    </form>
-    <br>
-<footer>
-    <a href="https://www.instagram.com/happytoothza/" target="_blank"><img src="media/icons8-instagram-50.png"></a>
-    <a href="https://www.facebook.com/" target="_blank"><img src="media/icons8-facebook-50.png"></a>
-    <a href="https://www.linkedin.com/feed/" target="_blank"><img src="media/icons8-linkedin-50.png"></a>
-</footer>
-</body>
-</html>
+    <!--Navigation Bar-->
+      <header class="navbar" id="navbar">
+    <div class="nav-container">
+
+        <!-- Logo -->
+        <a href="index.html" class="nav-logo">
+            <img src="/images/logo.png" alt="Sphere Style Boutique Logo" class="logo-img">
+            <br>
+            <span class="logo-text">Sphere Style <span class="logo-accent">Boutique</span></span>
+        </a>
+
+        <!-- Navigation Links -->
+        <nav class="nav-menu" id="navMenu">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="enquiry.html" class="nav-link active">Enquiry</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
