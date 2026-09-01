@@ -171,7 +171,8 @@ Below is a detailed disclosure of where and how these tools were used:
 
 ### 4. **Date(s) in Which Generative AI Was Used:**
 
-- **Assignment HTML Code Breakdown:** 
+- 28 August 2026
+- 30 August 2026
 
 ### 5. **Link to the AI Chat(s) or Screenshots:**
 
