@@ -88,7 +88,7 @@ I used GitHub actions to automate the build and deployment process. This include
    
 5. **Contact Us Page**
  
-<img width="960" height="540" alt="Screenshot 2026-06-10 113127" src="https://github.com/user-attachments/assets/dfd5b417-aec8-4ed6-99d9-bd9a7b69a4bf" />
+<img width="3170" height="1674" alt="site map" src="https://github.com/user-attachments/assets/6d9ead61-dae3-4451-b91c-c6f456351a73" />
 
 *Caption for screenshot 1: The site map of the website.*
 
@@ -96,48 +96,47 @@ I used GitHub actions to automate the build and deployment process. This include
 
 ## Screenshots of GitHub Change Log Commits
 
-<img width="960" height="540" alt="Screenshot 2026-06-10 113127" src="https://github.com/user-attachments/assets/dfd5b417-aec8-4ed6-99d9-bd9a7b69a4bf" />
+<img width="600" height="298" alt="changlog 1" src="https://github.com/user-attachments/assets/86d7cb4d-04c7-4cb0-b202-a9e6cdd4378e" />
 
 *Caption for screenshot 1: The changelog for 28 August 2026.*
 
 
-<img width="960" height="540" alt="Screenshot 2026-06-10 113127" src="https://github.com/user-attachments/assets/dfd5b417-aec8-4ed6-99d9-bd9a7b69a4bf" />
+<img width="607" height="285" alt="changelog 2" src="https://github.com/user-attachments/assets/52f46980-fe51-4609-b348-c99072533967" />
 
 *Caption for screenshot 2: The changelog for 28 August 2026 and 30 August 2026.*
 
 
-<img width="960" height="540" alt="Screenshot 2026-06-10 113127" src="https://github.com/user-attachments/assets/dfd5b417-aec8-4ed6-99d9-bd9a7b69a4bf" />
+<img width="593" height="293" alt="changelog 3" src="https://github.com/user-attachments/assets/97242adb-f00b-44ec-b800-c130fe1073a7" />
 
 *Caption for screenshot 3: The changelog for 30 August 2026.*
 
 
-<img width="960" height="540" alt="Screenshot 2026-06-10 113127" src="https://github.com/user-attachments/assets/dfd5b417-aec8-4ed6-99d9-bd9a7b69a4bf" />
+<img width="595" height="293" alt="changelog 4" src="https://github.com/user-attachments/assets/3a0855b8-f130-4f3b-bfc1-079bf6a50052" />
 
 *Caption for screenshot 4: The changelog for 30 August 2026.*
 
 
-<img width="960" height="540" alt="Screenshot 2026-06-10 113127" src="https://github.com/user-attachments/assets/dfd5b417-aec8-4ed6-99d9-bd9a7b69a4bf" />
+<img width="611" height="283" alt="changelog 5" src="https://github.com/user-attachments/assets/7c21b1ac-e712-4814-b8e0-2fe87d6c55eb" />
 
 *Caption for screenshot 5: The changelog for 30 August 2026.*
 
 
-<img width="960" height="540" alt="Screenshot 2026-06-10 113127" src="https://github.com/user-attachments/assets/dfd5b417-aec8-4ed6-99d9-bd9a7b69a4bf" />
+<img width="605" height="296" alt="changelog 6" src="https://github.com/user-attachments/assets/da62ff98-7ed3-4624-9d53-fb8f5990eb76" />
 
 *Caption for screenshot 6: The changelog for 30 August 2026.*
 
 
-<img width="960" height="540" alt="Screenshot 2026-06-10 113127" src="https://github.com/user-attachments/assets/dfd5b417-aec8-4ed6-99d9-bd9a7b69a4bf" />
+<img width="599" height="292" alt="changelog 7" src="https://github.com/user-attachments/assets/70ab3c7a-0eba-4127-96fc-5b64574d7156" />
 
 *Caption for screenshot 7: The changelog for 30 August 2026.*
 
 
-
-<img width="960" height="540" alt="Screenshot 2026-06-10 113127" src="https://github.com/user-attachments/assets/dfd5b417-aec8-4ed6-99d9-bd9a7b69a4bf" />
+<img width="602" height="233" alt="changelog 8" src="https://github.com/user-attachments/assets/06e987d9-94e7-436e-b43d-f2dbd5b8aa38" />
 
 *Caption for screenshot 8: The changelog for 30 August 2026.*
 
 
-<img width="960" height="540" alt="Screenshot 2026-06-10 113127" src="https://github.com/user-attachments/assets/dfd5b417-aec8-4ed6-99d9-bd9a7b69a4bf" />
+<img width="617" height="241" alt="changelog 9" src="https://github.com/user-attachments/assets/da79d9d3-28c5-4cdb-8dad-dc0edd8c7c29" />
 
 *Caption for screenshot 9: The changelog for 31 August 2026 and 01 September 2026.*
 
