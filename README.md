@@ -141,6 +141,15 @@ I used GitHub actions to automate the build and deployment process. This include
 *Caption for screenshot 9: The changelog for 31 August 2026 and 01 September 2026.*
 
 
+<img width="599" height="259" alt="changelog 10" src="https://github.com/user-attachments/assets/f9bdaebb-1499-48d6-93b4-35d69eef07b0" />
+
+*Caption for screenshot 10: The changelog for 31 August 2026 and 01 September 2026.*
+
+
+<img width="613" height="223" alt="changelog 11" src="https://github.com/user-attachments/assets/00c8c979-aeb2-42d6-9bf6-e2d176d9fee0" />
+
+*Caption for screenshot 11: The changelog for 31 August 2026 and 01 September 2026.*
+
 ---
 
 ## References
