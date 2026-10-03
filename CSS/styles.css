@@ -438,3 +438,36 @@ section {
     margin-top: var(--space-3xl);
 }
 
+/* 6. UTILITY CLASSES */
+
+.text-center  { text-align: center; }
+.text-left    { text-align: left; }
+.text-right   { text-align: right; }
+.text-gold    { color: var(--color-gold); }
+.text-white   { color: var(--color-white); }
+.text-dark    { color: var(--color-dark); }
+.text-grey    { color: var(--color-mid-grey); }
+
+.bg-white     { background-color: var(--color-white); }
+.bg-beige     { background-color: var(--color-beige); }
+.bg-black     { background-color: var(--color-black); }
+.bg-gold      { background-color: var(--color-gold); }
+
+.d-flex       { display: flex; }
+.d-grid       { display: grid; }
+.d-none       { display: none; }
+.d-block      { display: block; }
+
+.mt-sm        { margin-top: var(--space-sm); }
+.mt-md        { margin-top: var(--space-md); }
+.mt-lg        { margin-top: var(--space-lg); }
+.mt-xl        { margin-top: var(--space-xl); }
+
+.mb-sm        { margin-bottom: var(--space-sm); }
+.mb-md        { margin-bottom: var(--space-md); }
+.mb-lg        { margin-bottom: var(--space-lg); }
+.mb-xl        { margin-bottom: var(--space-xl); }
+
+.w-full       { width: 100%; }
+.h-full       { height: 100%; }
+
