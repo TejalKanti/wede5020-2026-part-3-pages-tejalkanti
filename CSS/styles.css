@@ -176,3 +176,68 @@ textarea {
     white-space: nowrap;
     border: 0;
 }
+
+/* 3. GLOBAL TYPOGRAPHY */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-primary);
+    color: var(--color-dark);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: var(--fs-5xl);
+    font-weight: var(--fw-bold);
+}
+
+h2 {
+    font-size: var(--fs-3xl);
+    font-weight: var(--fw-semibold);
+}
+
+h3 {
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-semibold);
+}
+
+h4 {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-medium);
+}
+
+p {
+    font-family: var(--font-secondary);
+    font-weight: var(--fw-regular);
+    color: var(--color-mid-grey);
+    line-height: 1.75;
+}
+
+strong {
+    font-weight: var(--fw-semibold);
+    color: var(--color-dark);
+}
+
+em,
+i.italic {
+    font-style: italic;
+}
+
+small {
+    font-size: var(--fs-sm);
+}
+
+caption,
+figcaption,
+.caption {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-light);
+    font-style: italic;
+    color: var(--color-light-grey);
+}
