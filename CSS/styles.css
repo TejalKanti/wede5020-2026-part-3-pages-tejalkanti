@@ -597,7 +597,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('../images/hero/hero-main.jpg');
+    background-image: url(/images/vision-board.png);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
