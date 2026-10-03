@@ -383,3 +383,58 @@ figcaption,
     color: var(--color-white);
     transform: translateY(-2px);
 }
+
+/* 5. GLOBAL SECTION STYLES */
+
+section {
+    padding: var(--space-5xl) 0;
+}
+
+.section-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: var(--container-padding);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-label {
+    font-family: var(--font-primary);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: var(--space-sm);
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: var(--fs-3xl);
+    font-weight: var(--fw-semibold);
+    color: var(--color-dark);
+    margin-bottom: var(--space-md);
+    line-height: 1.2;
+}
+
+.section-subtitle {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-md);
+    color: var(--color-mid-grey);
+    line-height: 1.75;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section-cta {
+    text-align: center;
+    margin-top: var(--space-3xl);
+}
+
