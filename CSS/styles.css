@@ -471,3 +471,121 @@ section {
 .w-full       { width: 100%; }
 .h-full       { height: 100%; }
 
+/* 7. NAVIGATION BAR */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--color-black);
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    transition: var(--transition-base);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Scrolled state — slightly more opaque */
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.97);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+.nav-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: var(--container-padding);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* ---- Logo ---- */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: var(--radius-full);
+}
+
+.logo-text {
+    font-family: var(--font-primary);
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+    color: var(--color-white);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.logo-accent {
+    color: var(--color-gold);
+}
+
+/* ---- Nav Menu ---- */
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    list-style: none;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    font-family: var(--font-primary);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    color: var(--color-white);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    text-decoration: none;
+    white-space: nowrap;
+    letter-spacing: 0.03em;
+}
+
+.nav-link:hover {
+    color: var(--color-gold);
+    background-color: rgba(201, 168, 76, 0.1);
+}
+
+/* Active nav link */
+.nav-link.active {
+    color: var(--color-gold);
+    background-color: rgba(201, 168, 76, 0.12);
+}
+
+/* Active indicator underline */
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 2px;
+    background-color: var(--color-gold);
+    border-radius: var(--radius-full);
+}
+
