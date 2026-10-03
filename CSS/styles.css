@@ -1710,3 +1710,41 @@ section {
     color: rgba(255, 255, 255, 0.2);
 }
 
+/* 17. BACK TO TOP BUTTON */
+
+.back-to-top {
+    position: fixed;
+    bottom: var(--space-xl);
+    right: var(--space-xl);
+    width: 48px;
+    height: 48px;
+    background-color: var(--color-gold);
+    color: var(--color-dark);
+    border: none;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-base);
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition-base);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
