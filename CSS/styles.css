@@ -241,3 +241,145 @@ figcaption,
     font-style: italic;
     color: var(--color-light-grey);
 }
+
+/* 4. GLOBAL BUTTON STYLES */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    font-family: var(--font-primary);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-base);
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius-full);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--transition-base);
+    text-decoration: none;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Primary Button — Gold background */
+.btn-primary {
+    background-color: var(--color-gold);
+    color: var(--color-dark);
+    border-color: var(--color-gold);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-gold-dark);
+    border-color: var(--color-gold-dark);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold);
+}
+
+/* Secondary Button — Black background */
+.btn-secondary {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border-color: var(--color-black);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-dark-grey);
+    border-color: var(--color-dark-grey);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Outline Button — Black outline */
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-dark);
+    border-color: var(--color-dark);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    transform: translateY(-2px);
+}
+
+/* Gold Button (solid) */
+.btn-gold {
+    background-color: var(--color-gold);
+    color: var(--color-dark);
+    border-color: var(--color-gold);
+}
+
+.btn-gold:hover {
+    background-color: var(--color-gold-dark);
+    border-color: var(--color-gold-dark);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold);
+}
+
+/* Gold Outline Button */
+.btn-gold-outline {
+    background-color: transparent;
+    color: var(--color-gold);
+    border-color: var(--color-gold);
+}
+
+.btn-gold-outline:hover {
+    background-color: var(--color-gold);
+    color: var(--color-dark);
+    transform: translateY(-2px);
+}
+
+/* White Outline Button */
+.btn-white-outline {
+    background-color: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+.btn-white-outline:hover {
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    transform: translateY(-2px);
+}
+
+/* Light Button */
+.btn-light {
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    border-color: var(--color-white);
+}
+
+.btn-light:hover {
+    background-color: var(--color-beige);
+    border-color: var(--color-beige);
+    transform: translateY(-2px);
+}
+
+/* Small Button */
+.btn-small {
+    padding: 0.5rem 1.25rem;
+    font-size: var(--fs-sm);
+    border-radius: var(--radius-full);
+    background-color: var(--color-gold);
+    color: var(--color-dark);
+    border: 2px solid var(--color-gold);
+    font-family: var(--font-primary);
+    font-weight: var(--fw-bold);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    transition: var(--transition-base);
+    cursor: pointer;
+}
+
+.btn-small:hover {
+    background-color: var(--color-gold-dark);
+    border-color: var(--color-gold-dark);
+    color: var(--color-white);
+    transform: translateY(-2px);
+}
