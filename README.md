@@ -12,8 +12,9 @@
 
 
 ## Links- 
-**GitHub Repository**: https://github.com/EMGPSD/wede5020-2026-wede5020-part-1-tejalkanti
-
+**GitHub Repository**: 
+	**Part 1**: https://github.com/EMGPSD/wede5020-2026-wede5020-part-1-tejalkanti
+	**Part 2**: https://github.com/EMGPSD/wede5020-2026-part-2-tejalkanti
 ---
 
 ## Project Overview
@@ -146,9 +147,29 @@ I used GitHub actions to automate the build and deployment process. This include
 *Caption for screenshot 10: The changelog for 31 August 2026 and 01 September 2026.*
 
 
-<img width="613" height="223" alt="changelog 11" src="https://github.com/user-attachments/assets/00c8c979-aeb2-42d6-9bf6-e2d176d9fee0" />
+<img width="613" height="223" alt="changelog 11" src="https://github.com/user-attachments/assets/54057001-89fb-4d06-a8d9-580fb36161e2" />
 
-*Caption for screenshot 11: The changelog for 31 August 2026 and 01 September 2026.*
+*Caption for screenshot 11: The changelog for 03 October 2026.*
+
+
+<img width="611" height="216" alt="changelog 12" src="https://github.com/user-attachments/assets/7f962b3c-a165-44d1-817b-7031bc95e628" />
+
+*Caption for screenshot 12: The changelog for 03 October 2026.*
+
+
+<img width="602" height="290" alt="changelog 13" src="https://github.com/user-attachments/assets/2a64bc60-a5d8-496b-aa99-5d7cb396db98" />
+
+*Caption for screenshot 13: The changelog for 03 October 2026.*
+
+
+<img width="604" height="292" alt="changelog 14" src="https://github.com/user-attachments/assets/fa3e6b20-e6b2-45d8-8d8f-8f46ba5e1085" />
+
+*Caption for screenshot 14: The changelog for 03 October 2026.*
+
+
+<img width="604" height="292" alt="changelog 14" src="https://github.com/user-attachments/assets/fa3e6b20-e6b2-45d8-8d8f-8f46ba5e1085" />
+
+*Caption for screenshot 15: The changelog for 03 October 2026.*
 
 ---
 
