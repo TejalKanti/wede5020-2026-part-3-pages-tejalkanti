@@ -1196,3 +1196,142 @@ section {
     color: var(--color-mid-grey);
     line-height: 1.7;
 }
+
+/* 13. PROMOTIONS SECTION */
+
+.promotions {
+    background-color: var(--color-black);
+    padding: var(--space-5xl) 0;
+}
+
+/* Override section header text for dark background */
+.promotions .section-header {
+    color: var(--color-white);
+}
+
+.promotions .section-title,
+.promo-title {
+    color: var(--color-white);
+}
+
+.promotions .section-subtitle,
+.promo-subtitle {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.promo-label {
+    color: var(--color-gold);
+}
+
+/* Promos grid — 4 columns */
+.promos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+/* ---- Promo Card ---- */
+.promo-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl) var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    transition: var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.promo-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-gold), transparent);
+    opacity: 0;
+    transition: var(--transition-base);
+}
+
+.promo-card:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(201, 168, 76, 0.3);
+    transform: translateY(-6px);
+}
+
+.promo-card:hover::before {
+    opacity: 1;
+}
+
+/* Featured promo card (center, slightly emphasized) */
+.promo-card-featured {
+    background-color: rgba(201, 168, 76, 0.12);
+    border-color: rgba(201, 168, 76, 0.4);
+}
+
+.promo-card-featured::before {
+    opacity: 1;
+    background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
+}
+
+/* Promo icon */
+.promo-card-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-xl);
+    color: var(--color-dark);
+    box-shadow: var(--shadow-gold);
+    transition: var(--transition-base);
+}
+
+.promo-card:hover .promo-card-icon {
+    transform: scale(1.1);
+}
+
+/* Promo card body */
+.promo-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    flex: 1;
+}
+
+/* Promo badge */
+.promo-card-badge {
+    font-family: var(--font-primary);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-bold);
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    background-color: rgba(201, 168, 76, 0.12);
+    padding: 3px 12px;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(201, 168, 76, 0.25);
+    align-self: flex-start;
+}
+
+.promo-card-title {
+    font-family: var(--font-primary);
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-semibold);
+    color: var(--color-white);
+}
+
+.promo-card-text {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-sm);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    flex: 1;
+}
+
