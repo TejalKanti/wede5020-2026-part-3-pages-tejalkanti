@@ -755,3 +755,43 @@ section {
     0%, 100% { transform: translateX(-50%) translateY(0); }
     50%       { transform: translateX(-50%) translateY(-10px); }
 }
+
+/* 9. ANNOUNCEMENT STRIP */
+
+.announcement-strip {
+    background-color: var(--color-gold);
+    padding: var(--space-sm) 0;
+    overflow: hidden;
+}
+
+.announcement-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: var(--container-padding);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+}
+
+.announcement-container span {
+    font-family: var(--font-primary);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    color: var(--color-dark);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    white-space: nowrap;
+}
+
+.announcement-container span i {
+    font-size: var(--fs-base);
+}
+
+.strip-divider {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: var(--fs-lg);
+}
+
