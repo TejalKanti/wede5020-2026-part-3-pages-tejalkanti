@@ -11,13 +11,14 @@
 **Subject**: Web Development
 
 
-## Links- 
+## Links: 
 
 ### GitHub Repository:
 
-	**Part 1**: https://github.com/EMGPSD/wede5020-2026-wede5020-part-1-tejalkanti
+**Part 1**: https://github.com/EMGPSD/wede5020-2026-wede5020-part-1-tejalkanti
 	
-	**Part 2**: https://github.com/EMGPSD/wede5020-2026-part-2-tejalkanti
+**Part 2**: https://github.com/EMGPSD/wede5020-2026-part-2-tejalkanti
+
 ---
 
 ## Project Overview
