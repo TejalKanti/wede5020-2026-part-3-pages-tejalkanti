@@ -12,8 +12,11 @@
 
 
 ## Links- 
-**GitHub Repository**: 
+
+### GitHub Repository:
+
 	**Part 1**: https://github.com/EMGPSD/wede5020-2026-wede5020-part-1-tejalkanti
+	
 	**Part 2**: https://github.com/EMGPSD/wede5020-2026-part-2-tejalkanti
 ---
 
@@ -167,7 +170,7 @@ I used GitHub actions to automate the build and deployment process. This include
 *Caption for screenshot 14: The changelog for 03 October 2026.*
 
 
-<img width="604" height="292" alt="changelog 14" src="https://github.com/user-attachments/assets/fa3e6b20-e6b2-45d8-8d8f-8f46ba5e1085" />
+<img width="596" height="172" alt="changelog 15" src="https://github.com/user-attachments/assets/a4ad4141-c5e5-433f-837b-24cb2061c722" />
 
 *Caption for screenshot 15: The changelog for 03 October 2026.*
 
