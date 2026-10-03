@@ -1335,3 +1335,103 @@ section {
     flex: 1;
 }
 
+/* 14. TESTIMONIALS SECTION */
+
+.testimonials {
+    background-color: var(--color-beige);
+    padding: var(--space-5xl) 0;
+}
+
+/* Testimonials grid — 3 columns */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+/* ---- Testimonial Card ---- */
+.testimonial-card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    transition: var(--transition-base);
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: '\201C';
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-lg);
+    font-family: Georgia, serif;
+    font-size: 5rem;
+    color: var(--color-gold);
+    opacity: 0.2;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Star rating */
+.testimonial-stars {
+    display: flex;
+    gap: 4px;
+    color: var(--color-gold);
+    font-size: var(--fs-md);
+}
+
+/* Testimonial text */
+.testimonial-text {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-base);
+    color: var(--color-dark-grey);
+    line-height: 1.8;
+    font-style: italic;
+    flex: 1;
+}
+
+/* Author info */
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+}
+
+.testimonial-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid var(--color-gold);
+}
+
+.testimonial-author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.testimonial-author-info strong {
+    font-family: var(--font-primary);
+    font-size: var(--fs-base);
+    font-weight: var(--fw-semibold);
+    color: var(--color-dark);
+}
+
+.testimonial-author-info span {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-sm);
+    color: var(--color-light-grey);
+}
+
