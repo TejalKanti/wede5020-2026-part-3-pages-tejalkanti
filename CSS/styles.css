@@ -1495,3 +1495,59 @@ section {
     flex-shrink: 0;
 }
 
+/* 16. FOOTER */
+
+.footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding-top: var(--space-5xl);
+}
+
+.footer-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: var(--container-padding);
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: var(--space-3xl);
+    padding-bottom: var(--space-3xl);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ---- Footer Brand Column ---- */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.footer-logo {
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: var(--space-sm);
+}
+
+.footer-logo-text {
+    font-family: var(--font-primary);
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-bold);
+    color: var(--color-white);
+    letter-spacing: 0.02em;
+}
+
+.footer-tagline {
+    font-family: var(--font-primary);
+    font-size: var(--fs-base);
+    font-weight: var(--fw-medium);
+    color: var(--color-gold);
+    font-style: italic;
+    margin: 0;
+}
+
+.footer-description {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-sm);
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+    margin: 0;
+}
