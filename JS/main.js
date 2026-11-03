@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('Sphere Style Boutique — JS Loaded Successfully');
 
     // ---- Run all initializers ----
+    initProductFilters();
+    initProductWishlist();
+    initContactForm();
+    initEnquiryForm();
     initNavbarScroll();
     initHamburgerMenu();
     initCloseMenuOnOutsideClick();
@@ -21,6 +25,447 @@ document.addEventListener('DOMContentLoaded', function () {
     initPageLoadAnimation();
 
 });
+
+// 1.2 PRODUCT CATALOGUE — PERSISTENT FAVOURITES
+
+function initProductWishlist() {
+
+    const productsGrid = document.getElementById('productsGrid');
+    if (!productsGrid) return;
+
+    const wishlistButtons = productsGrid.querySelectorAll('.wishlist-btn');
+    const storageKey = 'sphereStyleFavourites';
+    let favouriteIds = new Set();
+
+    try {
+        const savedFavourites = window.localStorage.getItem(storageKey);
+
+        if (savedFavourites !== null) {
+            const parsedFavourites = JSON.parse(savedFavourites);
+            if (!Array.isArray(parsedFavourites) || parsedFavourites.some(function (id) {
+                return typeof id !== 'string';
+            })) {
+                throw new TypeError('Saved favourites must be an array of product IDs.');
+            }
+
+            favouriteIds = new Set(parsedFavourites);
+        }
+    } catch (error) {
+        console.error('Unable to load saved product favourites.', error);
+    }
+
+    function updateButton(button, productCard) {
+        const productName = productCard.querySelector('.product-card-name').textContent.trim();
+        const isFavourite = favouriteIds.has(productCard.id);
+        const heartIcon = button.querySelector('i');
+
+        button.setAttribute('aria-pressed', String(isFavourite));
+        button.setAttribute(
+            'aria-label',
+            (isFavourite ? 'Remove ' : 'Add ') + productName + ' ' + (isFavourite ? 'from' : 'to') + ' favourites'
+        );
+        heartIcon.classList.toggle('fa-solid', isFavourite);
+        heartIcon.classList.toggle('fa-regular', !isFavourite);
+    }
+
+    wishlistButtons.forEach(function (button) {
+        const productCard = button.closest('.product-card');
+        if (!productCard || !productCard.id || !productCard.querySelector('.product-card-name') || !button.querySelector('i')) {
+            console.error('A product favourite button is missing its product ID, name, or heart icon.', button);
+            return;
+        }
+
+        updateButton(button, productCard);
+
+        button.addEventListener('click', function () {
+            if (favouriteIds.has(productCard.id)) {
+                favouriteIds.delete(productCard.id);
+            } else {
+                favouriteIds.add(productCard.id);
+            }
+
+            updateButton(button, productCard);
+
+            try {
+                window.localStorage.setItem(storageKey, JSON.stringify(Array.from(favouriteIds)));
+            } catch (error) {
+                console.error('Unable to save product favourites.', error);
+            }
+        });
+    });
+}
+
+// 1.1 PRODUCT CATALOGUE — COMBINED SEASON, CATEGORY, AND COLOUR FILTERS
+
+function initProductFilters() {
+
+    const filterPanel = document.getElementById('filterPanel');
+    const productsGrid = document.getElementById('productsGrid');
+
+    if (!filterPanel || !productsGrid) return;
+
+    const filterButtons = filterPanel.querySelectorAll('[data-filter-type][data-filter]');
+    const productCards = Array.from(productsGrid.querySelectorAll('.product-card'));
+    const productCount = document.getElementById('productCount');
+    const clearFiltersButton = document.getElementById('clearFilters');
+    const clearNoResultsButton = document.getElementById('clearFiltersNoResults');
+    const noResults = document.getElementById('noResults');
+    const selectedFilters = {
+        season: 'all',
+        category: 'all',
+        colour: 'all'
+    };
+
+    function updateProducts() {
+        let visibleCount = 0;
+
+        productCards.forEach(function (card) {
+            const matches = Object.keys(selectedFilters).every(function (filterType) {
+                const selectedValue = selectedFilters[filterType];
+                return selectedValue === 'all' || card.dataset[filterType] === selectedValue;
+            });
+
+            card.classList.toggle('filter-hidden', !matches);
+            if (matches) visibleCount += 1;
+        });
+
+        if (productCount) {
+            productCount.textContent = String(visibleCount);
+        }
+
+        if (noResults) {
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+    }
+
+    function resetFilters() {
+        Object.keys(selectedFilters).forEach(function (filterType) {
+            selectedFilters[filterType] = 'all';
+        });
+
+        filterButtons.forEach(function (button) {
+            const isAllButton = button.dataset.filter === 'all';
+            const isActive = isAllButton && button.dataset.filterType in selectedFilters;
+            button.classList.toggle('active', isActive);
+            button.setAttribute('aria-pressed', String(isActive));
+        });
+
+        updateProducts();
+    }
+
+    filterButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            const filterType = button.dataset.filterType;
+            if (!(filterType in selectedFilters)) return;
+
+            selectedFilters[filterType] = button.dataset.filter;
+
+            filterButtons.forEach(function (groupButton) {
+                if (groupButton.dataset.filterType !== filterType) return;
+                const isActive = groupButton === button;
+                groupButton.classList.toggle('active', isActive);
+                groupButton.setAttribute('aria-pressed', String(isActive));
+            });
+
+            updateProducts();
+        });
+    });
+
+    if (clearFiltersButton) {
+        clearFiltersButton.addEventListener('click', resetFilters);
+    }
+
+    if (clearNoResultsButton) {
+        clearNoResultsButton.addEventListener('click', resetFilters);
+    }
+
+    updateProducts();
+}
+
+// 1.1 CONTACT FORM — CLIENT-SIDE VALIDATION
+
+function initContactForm() {
+
+    const form = document.getElementById('contactForm');
+
+    if (!form) return;
+
+    const errorSummary = document.getElementById('contactErrorSummary');
+    const errorList = document.getElementById('contactErrorList');
+    const successMessage = document.getElementById('contactSuccessMessage');
+    const messageField = document.getElementById('contactMessage');
+    const messageCount = document.getElementById('contactMessageCount');
+    const errorIds = {
+        contactFullName: 'contactFullNameError',
+        contactEmail: 'contactEmailError',
+        contactPhone: 'contactPhoneError',
+        contactSubject: 'contactSubjectError',
+        contactMessage: 'contactMessageError',
+        contactAgreeTerms: 'contactTermsError'
+    };
+
+    function clearFieldError(field) {
+        const errorElement = document.getElementById(errorIds[field.id]);
+
+        field.removeAttribute('aria-invalid');
+
+        if (errorElement) {
+            errorElement.textContent = '';
+        }
+    }
+
+    function clearFormErrors() {
+        form.querySelectorAll('[aria-invalid="true"]').forEach(function (field) {
+            field.removeAttribute('aria-invalid');
+        });
+        form.querySelectorAll('.form-error-msg').forEach(function (error) {
+            error.textContent = '';
+        });
+
+        if (errorList) {
+            errorList.replaceChildren();
+        }
+
+        if (errorSummary) {
+            errorSummary.style.display = 'none';
+        }
+    }
+
+    form.addEventListener('input', function (event) {
+        if (event.target.matches('input, select, textarea')) {
+            clearFieldError(event.target);
+            if (successMessage) {
+                successMessage.style.display = 'none';
+            }
+        }
+
+        if (event.target === messageField && messageCount) {
+            messageCount.textContent = messageField.value.length + ' / 1500';
+        }
+    });
+
+    form.addEventListener('change', function (event) {
+        if (event.target.matches('input, select, textarea')) {
+            clearFieldError(event.target);
+            if (successMessage) {
+                successMessage.style.display = 'none';
+            }
+        }
+    });
+
+    form.addEventListener('reset', function () {
+        window.setTimeout(function () {
+            clearFormErrors();
+            if (successMessage) {
+                successMessage.style.display = 'none';
+            }
+            if (messageCount) {
+                messageCount.textContent = '0 / 1500';
+            }
+        }, 0);
+    });
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        clearFormErrors();
+
+        const invalidFields = [];
+        const fieldsToValidate = Array.from(form.querySelectorAll('[required]'));
+        const phoneField = document.getElementById('contactPhone');
+
+        if (phoneField && phoneField.value.trim()) {
+            fieldsToValidate.push(phoneField);
+        }
+
+        fieldsToValidate.forEach(function (field) {
+            let errorMessage = '';
+
+            if (!field.checkValidity()) {
+                errorMessage = field.validationMessage;
+            } else if (field.id === 'contactFullName' && !field.value.trim()) {
+                errorMessage = 'Enter your name.';
+            } else if (field.id === 'contactSubject' && !field.value.trim()) {
+                errorMessage = 'Enter a subject for your message.';
+            } else if (field.id === 'contactMessage' && !field.value.trim()) {
+                errorMessage = 'Enter a message.';
+            } else if (field.id === 'contactPhone' && !validatePhoneNumber(field.value)) {
+                errorMessage = 'Enter a valid South African phone number, such as 082 000 0000.';
+            }
+
+            if (!errorMessage) return;
+
+            field.setAttribute('aria-invalid', 'true');
+            invalidFields.push(field);
+
+            const errorElement = document.getElementById(errorIds[field.id]);
+            if (errorElement) {
+                errorElement.textContent = errorMessage;
+            }
+
+            if (errorList) {
+                const item = document.createElement('li');
+                const label = form.querySelector('label[for="' + field.id + '"]');
+                item.textContent = (label ? label.textContent.replace('*', '').trim() : 'This field') +
+                    ': ' + errorMessage;
+                errorList.appendChild(item);
+            }
+        });
+
+        if (invalidFields.length) {
+            if (errorSummary) {
+                errorSummary.style.display = 'block';
+                errorSummary.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            invalidFields[0].focus();
+            return;
+        }
+
+        if (successMessage) {
+            successMessage.style.display = 'block';
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    });
+}
+
+// 1.1 ENQUIRY FORM — CLIENT-SIDE VALIDATION
+
+function initEnquiryForm() {
+
+    const form = document.getElementById('enquiryForm');
+
+    if (!form) return;
+
+    const errorSummary = document.getElementById('formErrorSummary');
+    const errorList = document.getElementById('errorList');
+    const successMessage = document.getElementById('formSuccessMessage');
+    const messageField = document.getElementById('enquiryMessage');
+    const messageCount = document.getElementById('messageCount');
+    const errorIds = {
+        firstName: 'firstNameError',
+        lastName: 'lastNameError',
+        emailAddress: 'emailError',
+        phoneNumber: 'phoneError',
+        enquiryType: 'enquiryTypeError',
+        enquiryMessage: 'messageError',
+        agreeTerms: 'termsError'
+    };
+
+    function clearFieldError(field) {
+        const errorElement = document.getElementById(errorIds[field.id]);
+
+        field.removeAttribute('aria-invalid');
+
+        if (errorElement) {
+            errorElement.textContent = '';
+        }
+    }
+
+    function clearFormErrors() {
+        form.querySelectorAll('[aria-invalid="true"]').forEach(function (field) {
+            field.removeAttribute('aria-invalid');
+        });
+        form.querySelectorAll('.form-error-msg').forEach(function (error) {
+            error.textContent = '';
+        });
+
+        if (errorList) {
+            errorList.replaceChildren();
+        }
+
+        if (errorSummary) {
+            errorSummary.style.display = 'none';
+        }
+    }
+
+    form.addEventListener('input', function (event) {
+        if (event.target.matches('input, select, textarea')) {
+            clearFieldError(event.target);
+            if (successMessage) {
+                successMessage.style.display = 'none';
+            }
+        }
+
+        if (event.target === messageField && messageCount) {
+            messageCount.textContent = messageField.value.length + ' / 1000';
+        }
+    });
+
+    form.addEventListener('change', function (event) {
+        if (event.target.matches('input, select, textarea')) {
+            clearFieldError(event.target);
+            if (successMessage) {
+                successMessage.style.display = 'none';
+            }
+        }
+    });
+
+    form.addEventListener('reset', function () {
+        window.setTimeout(function () {
+            clearFormErrors();
+            if (successMessage) {
+                successMessage.style.display = 'none';
+            }
+            if (messageCount) {
+                messageCount.textContent = '0 / 1000';
+            }
+        }, 0);
+    });
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        clearFormErrors();
+
+        const invalidFields = [];
+        const fieldsToValidate = Array.from(form.querySelectorAll('[required]'));
+        const phoneField = document.getElementById('phoneNumber');
+
+        if (phoneField && phoneField.value.trim()) {
+            fieldsToValidate.push(phoneField);
+        }
+
+        fieldsToValidate.forEach(function (field) {
+            let errorMessage = '';
+
+            if (!field.checkValidity()) {
+                errorMessage = field.validationMessage;
+            } else if (field.id === 'phoneNumber' && !validatePhoneNumber(field.value)) {
+                errorMessage = 'Enter a valid South African phone number, such as 082 000 0000.';
+            }
+
+            if (!errorMessage) return;
+
+            field.setAttribute('aria-invalid', 'true');
+            invalidFields.push(field);
+
+            const errorElement = document.getElementById(errorIds[field.id]);
+            if (errorElement) {
+                errorElement.textContent = errorMessage;
+            }
+
+            if (errorList) {
+                const item = document.createElement('li');
+                const label = form.querySelector('label[for="' + field.id + '"]');
+                item.textContent = (label ? label.textContent.replace('*', '').trim() : 'This field') +
+                    ': ' + errorMessage;
+                errorList.appendChild(item);
+            }
+        });
+
+        if (invalidFields.length) {
+            if (errorSummary) {
+                errorSummary.style.display = 'block';
+                errorSummary.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            invalidFields[0].focus();
+            return;
+        }
+
+        if (successMessage) {
+            successMessage.style.display = 'block';
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    });
+}
 
 // 2. NAVIGATION BAR — STICKY SCROLL EFFECT
 
