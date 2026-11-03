@@ -581,3 +581,172 @@ function initPageLoadAnimation() {
         document.body.style.opacity = '1';
     }
 }
+
+// 15. UTILITY FUNCTIONS
+
+/* ---- Format currency (South African Rand) ---- */
+function formatCurrency(amount) {
+    return 'R ' + parseFloat(amount).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+/* ---- Debounce function ---- */
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction() {
+        const context = this;
+        const args    = arguments;
+        clearTimeout(timeout);
+        timeout = setTimeout(function () {
+            func.apply(context, args);
+        }, wait);
+    };
+}
+
+/* ---- Throttle function ---- */
+function throttle(func, limit) {
+    let inThrottle;
+    return function () {
+        const context = this;
+        const args    = arguments;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(function () {
+                inThrottle = false;
+            }, limit);
+        }
+    };
+}
+
+/* ---- Check if element is in viewport ---- */
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top    >= 0 &&
+        rect.left   >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right  <= (window.innerWidth  || document.documentElement.clientWidth)
+    );
+}
+
+/* ---- Get element offset from top of page ---- */
+function getOffsetTop(element) {
+    let offsetTop = 0;
+    while (element) {
+        offsetTop += element.offsetTop;
+        element    = element.offsetParent;
+    }
+    return offsetTop;
+}
+
+/* ---- Sanitize string input ---- */
+function sanitizeInput(input) {
+    const div       = document.createElement('div');
+    div.appendChild(document.createTextNode(input));
+    return div.innerHTML;
+}
+
+/* ---- Validate email address ---- */
+function validateEmail(email) {
+    const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email.trim());
+}
+
+/* ---- Validate South African phone number ---- */
+function validatePhoneNumber(phone) {
+    // Accepts formats: +27 82 000 0000, 082 000 0000, 0820000000
+    const phoneRegex = /^(\+27|0)[6-8][0-9]{8}$/;
+    const cleaned    = phone.replace(/[\s\-\(\)]/g, '');
+    return phoneRegex.test(cleaned);
+}
+
+/* ---- Show toast notification ---- */
+function showToast(message, type) {
+
+    // type: 'success' | 'error' | 'warning' | 'info'
+    type = type || 'success';
+
+    // Remove any existing toasts
+    const existingToast = document.querySelector('.ssb-toast');
+    if (existingToast) {
+        existingToast.remove();
+    }
+
+    // Toast icons
+    const icons = {
+        success: 'fa-circle-check',
+        error:   'fa-circle-xmark',
+        warning: 'fa-triangle-exclamation',
+        info:    'fa-circle-info'
+    };
+
+    // Toast colors
+    const colors = {
+        success: '#4CAF50',
+        error:   '#D32F2F',
+        warning: '#F57C00',
+        info:    '#1976D2'
+    };
+
+    // Create toast element
+    const toast = document.createElement('div');
+    toast.className    = 'ssb-toast';
+    toast.setAttribute('role', 'alert');
+    toast.setAttribute('aria-live', 'polite');
+
+    toast.style.cssText = [
+        'position: fixed',
+        'bottom: 100px',
+        'right: 24px',
+        'background-color: ' + (colors[type] || colors.success),
+        'color: #ffffff',
+        'padding: 14px 20px',
+        'border-radius: 8px',
+        'display: flex',
+        'align-items: center',
+        'gap: 10px',
+        'font-family: Poppins, sans-serif',
+        'font-size: 14px',
+        'font-weight: 500',
+        'box-shadow: 0 8px 24px rgba(0,0,0,0.15)',
+        'z-index: 9999',
+        'max-width: 340px',
+        'opacity: 0',
+        'transform: translateY(20px)',
+        'transition: all 0.3s ease'
+    ].join(';');
+
+    toast.innerHTML =
+        '<i class="fa-solid ' + (icons[type] || icons.success) + '" style="font-size: 18px; flex-shrink: 0;"></i>' +
+        '<span>' + sanitizeInput(message) + '</span>';
+
+    document.body.appendChild(toast);
+
+    // Animate in
+    requestAnimationFrame(function () {
+        toast.style.opacity   = '1';
+        toast.style.transform = 'translateY(0)';
+    });
+
+    // Auto dismiss after 3.5 seconds
+    setTimeout(function () {
+        toast.style.opacity   = '0';
+        toast.style.transform = 'translateY(20px)';
+        setTimeout(function () {
+            if (toast.parentNode) {
+                toast.remove();
+            }
+        }, 300);
+    }, 3500);
+}
+
+/* ---- Expose utilities globally ---- */
+window.formatCurrency     = formatCurrency;
+window.debounce           = debounce;
+window.throttle           = throttle;
+window.isInViewport       = isInViewport;
+window.getOffsetTop       = getOffsetTop;
+window.sanitizeInput      = sanitizeInput;
+window.validateEmail      = validateEmail;
+window.validatePhoneNumber = validatePhoneNumber;
+window.showToast          = showToast;
