@@ -21,6 +21,8 @@
 
 **Part 3**: https://github.com/EMGPSD/wede5020-2026-part-3-tejalkanti.git
 
+**Public Publishing**:
+
 ---
 
 ## Project Overview
