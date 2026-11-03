@@ -140,22 +140,23 @@
                 </div>
 
                 <!-- Success Message (Hidden by default — shown by JS on valid submit) -->
-                <div class="form-success-message" id="formSuccessMessage" style="display: none;" role="alert">
+                <div class="form-success-message" id="formSuccessMessage" style="display: none;" role="status" aria-live="polite">
                     <div class="form-success-content">
                         <i class="fa-solid fa-circle-check"></i>
                         <div class="form-success-text">
-                            <h3>Enquiry Submitted Successfully!</h3>
+                            <h3>Enquiry Form Complete</h3>
                             <p>
-                                Thank you for reaching out to Sphere Style Boutique. 
-                                Our styling team will respond to your enquiry within 
-                                24 hours on business days.
+                                Your details are valid. This demo form is not connected to a
+                                submission service, so your enquiry has not been sent. Please
+                                email <a href="mailto:info@spherestyle.co.za">info@spherestyle.co.za</a>
+                                to contact our team.
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Error Summary (Hidden by default — shown by JS on invalid submit) -->
-                <div class="form-error-summary" id="formErrorSummary" style="display: none;" role="alert">
+                <div class="form-error-summary" id="formErrorSummary" style="display: none;" role="alert" aria-live="assertive">
                     <div class="form-error-summary-content">
                         <i class="fa-solid fa-triangle-exclamation"></i>
                         <div>
@@ -165,8 +166,8 @@
                     </div>
                 </div>
 
-  <!--Enquiry Form-->            
-                      <form
+                <!--Enquiry Form-->
+                <form
                     class="enquiry-form"
                     id="enquiryForm"
                     novalidate
@@ -269,9 +270,10 @@
                                         class="form-input"
                                         placeholder="e.g. +27 82 000 0000"
                                         autocomplete="tel"
-                                        aria-describedby="phoneHint"
+                                        aria-describedby="phoneError phoneHint"
                                     >
                                 </div>
+                                <span class="form-error-msg" id="phoneError" role="alert"></span>
                                 <span class="form-hint" id="phoneHint">
                                     Include country code, e.g. +27 for South Africa
                                 </span>
@@ -282,8 +284,6 @@
 
                     </fieldset>
                     <!-- End Fieldset A -->
-
-                    <br>
 
                     <!-- ---- SECTION B: Enquiry Details ---- -->
                     <fieldset class="form-fieldset">
@@ -505,8 +505,6 @@
                     </fieldset>
                     <!-- End Fieldset B -->
 
-                      <br>
-
                     <!-- ---- SECTION C: Appointment Preference ---- -->
                     <fieldset class="form-fieldset" id="appointmentFieldset">
                         <legend class="form-legend">
@@ -578,7 +576,6 @@
                                         class="form-select">
                                         <option value="" selected>-- Select Store Location --</option>
                                         <option value="sandton">Sandton City Branch — Sandton, Johannesburg</option>
-                                        <option value="rosebank">The Zone Branch — Rosebank, Johannesburg</option>
                                         <option value="online">Online Consultation (via Email / Phone)</option>
                                     </select>
                                 </div>
@@ -587,8 +584,6 @@
 
                     </fieldset>
                     <!-- End Fieldset C -->
-
-                    <br>
 
                     <!-- ---- SECTION D: Terms and Submit ---- -->
                     <fieldset class="form-fieldset form-fieldset-noborder">
@@ -608,13 +603,9 @@
                                 >
                                 <span class="form-checkbox-custom"></span>
                                 <span class="form-checkbox-text">
-                                    I agree that Sphere Style Boutique may contact me 
-                                    regarding my enquiry via the email address or phone 
-                                    number provided. I have read and accept the 
-                                    <a href="#" class="form-link" target="_blank">Privacy Policy</a>
-                                    and
-                                    <a href="#" class="form-link" target="_blank">Terms of Use</a>.
-                                    <span class="required-star">*</span>
+                                    I agree that Sphere Style Boutique may contact me
+                                    regarding my enquiry via the email address or phone
+                                    number provided.
                                 </span>
                             </label>
                             <span class="form-error-msg" id="termsError" role="alert"></span>
@@ -826,7 +817,6 @@
     <!--Footer-->
         <footer class="footer" id="footer">
     <div class="footer-container">
-        <br>
         <!-- Footer Column 1 — Brand -->
         <div class="footer-col footer-brand">
             <a href="index.html" class="footer-logo">

@@ -360,22 +360,23 @@
                 </div>
 
                 <!-- Success Message (Hidden by default — shown by JS on valid submit) -->
-                <div class="form-success-message" id="contactSuccessMessage" style="display: none;" role="alert">
+                <div class="form-success-message" id="contactSuccessMessage" style="display: none;" role="status" aria-live="polite">
                     <div class="form-success-content">
                         <i class="fa-solid fa-circle-check"></i>
                         <div class="form-success-text">
-                            <h3>Message Sent Successfully!</h3>
+                            <h3>Message Form Complete</h3>
                             <p>
-                                Thank you for contacting Sphere Style Boutique. 
-                                We have received your message and will get back to 
-                                you as soon as possible.
+                                Your details are valid. This demo form is not connected to a
+                                submission service, so your message has not been sent. Please
+                                email <a href="mailto:info@spherestyle.co.za">info@spherestyle.co.za</a>
+                                to contact our team.
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Error Summary (Hidden by default — shown by JS on invalid submit) -->
-                <div class="form-error-summary" id="contactErrorSummary" style="display: none;" role="alert">
+                <div class="form-error-summary" id="contactErrorSummary" style="display: none;" role="alert" aria-live="assertive">
                     <div class="form-error-summary-content">
                         <i class="fa-solid fa-triangle-exclamation"></i>
                         <div>
@@ -460,8 +461,10 @@
                                     class="form-input"
                                     placeholder="e.g. +27 82 000 0000"
                                     autocomplete="tel"
+                                    aria-describedby="contactPhoneError"
                                 >
                             </div>
+                            <span class="form-error-msg" id="contactPhoneError" role="alert"></span>
                         </div>
 
                         <!-- Subject -->
@@ -639,83 +642,7 @@
             <!-- Right Column - Contact Sidebar-->
                          <aside class="contact-sidebar-col" aria-label="Additional contact information and social media">
 
-                <!-- Sidebar Card 1 — Direct Contact -->
-                <div class="contact-sidebar-card">
-                    <div class="contact-sidebar-card-header">
-                        <i class="fa-solid fa-headset"></i>
-                        <h3>Get in Touch Directly</h3>
-                    </div>
-                    <ul class="contact-sidebar-list">
-                        <li>
-                            <div class="contact-sidebar-icon">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div class="contact-sidebar-info">
-                                <span class="contact-sidebar-label">Main Line</span>
-                                <a href="tel:+27110000000" class="contact-sidebar-value">
-                                    +27 11 000 0000
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-sidebar-icon">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div class="contact-sidebar-info">
-                                <span class="contact-sidebar-label">Sandton Branch</span>
-                                <a href="tel:+27110000001" class="contact-sidebar-value">
-                                    +27 11 000 0001
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-sidebar-icon">
-                                <i class="fa-brands fa-whatsapp"></i>
-                            </div>
-                            <div class="contact-sidebar-info">
-                                <span class="contact-sidebar-label">WhatsApp</span>
-                                <a href="https://wa.me/27820000000" target="_blank" rel="noopener noreferrer" class="contact-sidebar-value">
-                                    +27 82 000 0000
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-sidebar-icon">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div class="contact-sidebar-info">
-                                <span class="contact-sidebar-label">General Email</span>
-                                <a href="mailto:info@spherestyle.co.za" class="contact-sidebar-value">
-                                    info@spherestyle.co.za
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-sidebar-icon">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div class="contact-sidebar-info">
-                                <span class="contact-sidebar-label">Sandton Email</span>
-                                <a href="mailto:sandton@spherestyle.co.za" class="contact-sidebar-value">
-                                    sandton@spherestyle.co.za
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-sidebar-icon">
-                                <i class="fa-solid fa-globe"></i>
-                            </div>
-                            <div class="contact-sidebar-info">
-                                <span class="contact-sidebar-label">Website</span>
-                                <a href="https://www.spherestyle.co.za" target="_blank" rel="noopener noreferrer" class="contact-sidebar-value">
-                                    www.spherestyle.co.za
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Sidebar Card 2 — Trading Hours -->
+                <!-- Sidebar Card — Trading Hours -->
                 <div class="contact-sidebar-card">
                     <div class="contact-sidebar-card-header">
                         <i class="fa-solid fa-clock"></i>
@@ -761,7 +688,7 @@
                     </p>
                 </div>
 
-                <!-- Sidebar Card 3 — Social Media -->
+                <!-- Sidebar Card — Social Media -->
                 <div class="contact-sidebar-card">
                     <div class="contact-sidebar-card-header">
                         <i class="fa-solid fa-share-nodes"></i>
@@ -776,8 +703,6 @@
                             <i class="fa-brands fa-instagram"></i>
                             <span>@spherestyleboutique</span>
                         </a>
-                        <br>
-                        <br>
                         <a href="https://www.tiktok.com/" class="contact-social-btn contact-social-tiktok" aria-label="Follow Sphere Style Boutique on TikTok">
                             <i class="fa-brands fa-tiktok"></i>
                             <span>Sphere Style Boutique</span>
@@ -785,7 +710,7 @@
                     </div>
                 </div>
 
-                <!-- Sidebar Card 4 — Quick Links -->
+                <!-- Sidebar Card — Quick Links -->
                 <div class="contact-sidebar-card">
                     <div class="contact-sidebar-card-header">
                         <i class="fa-solid fa-link"></i>
@@ -819,44 +744,75 @@
                     </ul>
                 </div>
 
+                <!-- Direct contact details -->
+                <div class="contact-sidebar-card">
+                    <div class="contact-sidebar-card-header">
+                        <i class="fa-solid fa-headset"></i>
+                        <h3>Get in Touch Directly</h3>
+                    </div>
+                    <ul class="contact-sidebar-list">
+                        <li>
+                            <div class="contact-sidebar-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="contact-sidebar-info">
+                                <span class="contact-sidebar-label">Main Line</span>
+                                <a href="tel:+27110000000" class="contact-sidebar-value">+27 11 000 0000</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-sidebar-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="contact-sidebar-info">
+                                <span class="contact-sidebar-label">Sandton Branch</span>
+                                <a href="tel:+27110000001" class="contact-sidebar-value">+27 11 000 0001</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-sidebar-icon">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-sidebar-info">
+                                <span class="contact-sidebar-label">WhatsApp</span>
+                                <a href="https://wa.me/27820000000" target="_blank" rel="noopener noreferrer" class="contact-sidebar-value">+27 82 000 0000</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-sidebar-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="contact-sidebar-info">
+                                <span class="contact-sidebar-label">General Email</span>
+                                <a href="mailto:info@spherestyle.co.za" class="contact-sidebar-value">info@spherestyle.co.za</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-sidebar-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="contact-sidebar-info">
+                                <span class="contact-sidebar-label">Sandton Email</span>
+                                <a href="mailto:sandton@spherestyle.co.za" class="contact-sidebar-value">sandton@spherestyle.co.za</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-sidebar-icon">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <div class="contact-sidebar-info">
+                                <span class="contact-sidebar-label">Website</span>
+                                <a href="https://www.spherestyle.co.za" target="_blank" rel="noopener noreferrer" class="contact-sidebar-value">www.spherestyle.co.za</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
             </aside>
             <!-- End Right Column (Sidebar) -->
 
         </div>
         <!-- End Contact Layout -->
-
-    </div>
-</section>
-
-    <!--Social Media-->
-    <section class="social-strip" id="social-strip">
-    <div class="section-container">
-
-        <!-- Section Header -->
-        <div class="section-header">
-            <p class="section-label">Connect With Us</p>
-            <h2 class="section-title">Find Us Online</h2>
-            <p class="section-subtitle">
-                Follow Sphere Style Boutique on social media for daily styling 
-                inspiration, new arrivals, and exclusive promotions.
-            </p>
-        </div>
-
-        <!-- Social Platform Cards -->
-        <div class="social-platforms-grid">
-             <div class="enquiry-social-icons">
-                    <a href="https://www.instagram.com/" class="enquiry-social-btn" aria-label="Follow Sphere Style Boutique on Instagram">
-                         <i class="fa-brands fa-instagram"></i>
-                            <span>Instagram</span>
-                     </a>
-                    <br>
-                    <br>
-                    <a href="https://www.tiktok.com/" class="enquiry-social-btn" aria-label="Follow Sphere Style Boutique on TikTok">
-                        <i class="fa-brands fa-tiktok"></i>
-                            <span>TikTok</span>
-                    </a>
-        </div>
-        <!-- End Social Platforms Grid -->
 
     </div>
 </section>

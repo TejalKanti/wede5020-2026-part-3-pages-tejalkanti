@@ -189,64 +189,54 @@
             </p>
         </div>
 
-        <!--Filter-->
-                <div class="filter-panel" id="filterPanel">
-
-            <!-- Filter Group 1 — Season -->
+        <!-- Product filters -->
+        <div class="filter-panel" id="filterPanel" role="region" aria-label="Filter products">
             <div class="filter-group">
                 <span class="filter-group-label">
-                    <i class="fa-solid fa-calendar"></i> Season:
+                    <i class="fa-solid fa-calendar" aria-hidden="true"></i> Season
                 </span>
                 <div class="filter-buttons" role="group" aria-label="Filter by season">
-                    <button class="filter-btn active" data-filter-type="season" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter-type="season" data-filter="summer">Summer</button>
-                    <button class="filter-btn" data-filter-type="season" data-filter="winter">Winter</button>
-                    <button class="filter-btn" data-filter-type="season" data-filter="autumn">Autumn</button>
-                    <button class="filter-btn" data-filter-type="season" data-filter="spring">Spring</button>
+                    <button type="button" class="filter-btn active" data-filter-type="season" data-filter="all" aria-pressed="true">All</button>
+                    <button type="button" class="filter-btn" data-filter-type="season" data-filter="summer" aria-pressed="false">Summer</button>
+                    <button type="button" class="filter-btn" data-filter-type="season" data-filter="winter" aria-pressed="false">Winter</button>
+                    <button type="button" class="filter-btn" data-filter-type="season" data-filter="autumn" aria-pressed="false">Autumn</button>
+                    <button type="button" class="filter-btn" data-filter-type="season" data-filter="spring" aria-pressed="false">Spring</button>
                 </div>
             </div>
 
-            <!-- Filter Group 2 — Category -->
             <div class="filter-group">
                 <span class="filter-group-label">
-                    <i class="fa-solid fa-shirt"></i> Category:
+                    <i class="fa-solid fa-shirt" aria-hidden="true"></i> Category
                 </span>
                 <div class="filter-buttons" role="group" aria-label="Filter by category">
-                    <button class="filter-btn active" data-filter-type="category" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter-type="category" data-filter="office">Office Wear</button>
-                    <button class="filter-btn" data-filter-type="category" data-filter="casual">Casual Wear</button>
-                    <button class="filter-btn" data-filter-type="category" data-filter="formal">Formal Wear</button>
+                    <button type="button" class="filter-btn active" data-filter-type="category" data-filter="all" aria-pressed="true">All</button>
+                    <button type="button" class="filter-btn" data-filter-type="category" data-filter="office" aria-pressed="false">Office Wear</button>
+                    <button type="button" class="filter-btn" data-filter-type="category" data-filter="casual" aria-pressed="false">Casual Wear</button>
+                    <button type="button" class="filter-btn" data-filter-type="category" data-filter="formal" aria-pressed="false">Formal Wear</button>
                 </div>
             </div>
 
-            <!-- Filter Group 3 — Colour -->
             <div class="filter-group">
                 <span class="filter-group-label">
-                    <i class="fa-solid fa-palette"></i> Colour:
+                    <i class="fa-solid fa-palette" aria-hidden="true"></i> Colour
                 </span>
                 <div class="filter-buttons colour-filters" role="group" aria-label="Filter by colour">
-                    <button class="filter-btn active" data-filter-type="colour" data-filter="all"> All </button>
-                    <button class="colour-swatch" data-filter-type="colour" data-filter="black"; aria-label="Filter by Black" title="Black"> Black </button>
-                    <button class="colour-swatch" data-filter-type="colour" data-filter="white"; aria-label="Filter by White" title="White"> White </button>
-                    <button class="colour-swatch" data-filter-type="colour" data-filter="beige"; aria-label="Filter by Beige" title="Beige"> Beige </button>
-                    <button class="colour-swatch" data-filter-type="colour" data-filter="blue"; aria-label="Filter by Blue" title="Blue"> Blue </button>
-                    <button class="colour-swatch" data-filter-type="colour" data-filter="red"; aria-label="Filter by Red" title="Red">  Red </button>
-                    <button class="colour-swatch" data-filter-type="colour" data-filter="green"; aria-label="Filter by Green" title="Green"> Green </button>
-                    <button class="colour-swatch" data-filter-type="colour" data-filter="grey"; aria-label="Filter by Grey" title="Grey"> Grey </button>
-                    <button class="colour-swatch" data-filter-type="colour" data-filter="gold"; aria-label="Filter by Gold" title="Gold"> Gold </button>
+                    <button type="button" class="filter-btn active" data-filter-type="colour" data-filter="all" aria-pressed="true">All</button>
+                    <button type="button" class="colour-swatch" data-filter-type="colour" data-filter="black" aria-label="Filter by black" aria-pressed="false">Black</button>
+                    <button type="button" class="colour-swatch" data-filter-type="colour" data-filter="beige" aria-label="Filter by beige" aria-pressed="false">Beige</button>
+                    <button type="button" class="colour-swatch" data-filter-type="colour" data-filter="blue" aria-label="Filter by blue" aria-pressed="false">Blue</button>
+                    <button type="button" class="colour-swatch" data-filter-type="colour" data-filter="brown" aria-label="Filter by brown" aria-pressed="false">Brown</button>
                 </div>
             </div>
 
-            <!-- Results Count and Clear Filters -->
             <div class="filter-actions">
-                <span class="filter-results-count" id="filterResultsCount">
-                    Showing <strong id="productCount">12</strong> products
-                </span>
-                <button class="btn-clear-filters" id="clearFilters">
-                    <i class="fa-solid fa-xmark"></i> Clear All Filters
+                <p class="filter-results-count" id="filterResultsCount" aria-live="polite">
+                    Showing <strong id="productCount">12</strong> of 12 products
+                </p>
+                <button type="button" class="btn-clear-filters" id="clearFilters">
+                    <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Clear filters
                 </button>
             </div>
-
         </div>
         <!-- End Filter Panel -->
 
@@ -271,7 +261,7 @@
                     <!-- Stock Status Badge -->
                     <span class="stock-badge stock-in">In Stock</span>
                     <!-- Wishlist Button -->
-                    <button class="wishlist-btn" aria-label="Add Linen Sundress to wishlist">
+                    <button type="button" class="wishlist-btn" aria-label="Add Linen Sundress to favourites" aria-pressed="false">
                         <i class="fa-regular fa-heart"></i>
                     </button>
                 </div>
@@ -307,20 +297,10 @@
                     </div>
                     <div class="product-card-footer">
                         <span class="product-price">R 599.00</span>
-                        <button class="btn btn-add-cart"
-                            data-product-id="1"
-                            data-product-name="Linen Sundress"
-                            data-product-brand="Zara"
-                            data-product-price="599.00"
-                            data-product-image="/images/products/blue linen sundress.png"
-                            aria-label="Add Linen Sundress to cart">
-                            <i class="fa-solid fa-bag-shopping"></i> Add to Cart
-                        </button>
                     </div>
                 </div>
             </article>
 
-            <br>
             <!-- ---- PRODUCT CARD 2 — Tailored Blazer ---- -->
             <article class="product-card"
                 data-season="winter"
@@ -337,7 +317,7 @@
                         loading="lazy"
                     >
                     <span class="stock-badge stock-in">In Stock</span>
-                    <button class="wishlist-btn" aria-label="Add Tailored Blazer to wishlist">
+                    <button type="button" class="wishlist-btn" aria-label="Add Tailored Blazer to favourites" aria-pressed="false">
                         <i class="fa-regular fa-heart"></i>
                     </button>
                 </div>
@@ -373,20 +353,10 @@
                     </div>
                     <div class="product-card-footer">
                         <span class="product-price">R 1,299.00</span>
-                        <button class="btn btn-add-cart"
-                            data-product-id="2"
-                            data-product-name="Tailored Blazer"
-                            data-product-brand="Woolworths"
-                            data-product-price="1299.00"
-                            data-product-image="/images/products/tailored black blazer.png"
-                            aria-label="Add Tailored Blazer to cart">
-                            <i class="fa-solid fa-bag-shopping"></i> Add to Cart
-                        </button>
                     </div>
                 </div>
             </article>
 
-            <br>
             <!-- ---- PRODUCT CARD 3 — Draped Jersey Skirt ---- -->
             <article class="product-card"
                 data-season="autumn"
@@ -403,7 +373,7 @@
                         loading="lazy"
                     >
                     <span class="stock-badge stock-low">Low Stock</span>
-                    <button class="wishlist-btn" aria-label="Add Draped Jersey Skirt to wishlist">
+                    <button type="button" class="wishlist-btn" aria-label="Add Draped Jersey Skirt to favourites" aria-pressed="false">
                         <i class="fa-regular fa-heart"></i>
                     </button>
                 </div>
@@ -424,7 +394,7 @@
                         <div class="product-detail-item">
                             <span class="product-detail-label">Colour:</span>
                             <span class="product-detail-value">
-                                <span class="colour-dot" style="background-color:#DD4A48;"></span> Brown
+                                <span class="colour-dot" style="background-color:#392B2A;"></span> Brown
                             </span>
                         </div>
                         <div class="product-detail-item">
@@ -438,20 +408,10 @@
                     </div>
                     <div class="product-card-footer">
                         <span class="product-price">R 450.00</span>
-                        <button class="btn btn-add-cart"
-                            data-product-id="3"
-                            data-product-name="Draped Jersey Skirt"
-                            data-product-brand="H&M"
-                            data-product-price="450.00"
-                            data-product-image="/images/products/draped skirt.png"
-                            aria-label="Add Draped Jersey Skirt to cart">
-                            <i class="fa-solid fa-bag-shopping"></i> Add to Cart
-                        </button>
                     </div>
                 </div>
             </article>
 
-            <br>
             <!-- ---- PRODUCT CARD 4 — Evening Gown ---- -->
             <article class="product-card"
                 data-season="winter"
@@ -468,7 +428,7 @@
                         loading="lazy"
                     >
                     <span class="stock-badge stock-in">In Stock</span>
-                    <button class="wishlist-btn" aria-label="Add Evening Gown to wishlist">
+                    <button type="button" class="wishlist-btn" aria-label="Add Evening Gown to favourites" aria-pressed="false">
                         <i class="fa-regular fa-heart"></i>
                     </button>
                 </div>
@@ -503,20 +463,10 @@
                     </div>
                     <div class="product-card-footer">
                         <span class="product-price">R 2,199.00</span>
-                        <button class="btn btn-add-cart"
-                            data-product-id="4"
-                            data-product-name="Evening Gown"
-                            data-product-brand="Truworths"
-                            data-product-price="2199.00"
-                            data-product-image="/images/products/black evening gown.png"
-                            aria-label="Add Evening Gown to cart">
-                            <i class="fa-solid fa-bag-shopping"></i> Add to Cart
-                        </button>
                     </div>
                 </div>
             </article>
 
-            <br>
             <!-- ---- PRODUCT CARD 5 — High-Rise Jeans ---- -->
             <article class="product-card"
                 data-season="spring"
@@ -533,7 +483,7 @@
                         loading="lazy"
                     >
                     <span class="stock-badge stock-in">In Stock</span>
-                    <button class="wishlist-btn" aria-label="Add High-Rise Jeans to wishlist">
+                    <button type="button" class="wishlist-btn" aria-label="Add High-Rise Jeans to favourites" aria-pressed="false">
                         <i class="fa-regular fa-heart"></i>
                     </button>
                 </div>
@@ -569,25 +519,15 @@
                     </div>
                     <div class="product-card-footer">
                         <span class="product-price">R 799.00</span>
-                        <button class="btn btn-add-cart"
-                            data-product-id="5"
-                            data-product-name="High-Rise Jeans"
-                            data-product-brand="Woolworths"
-                            data-product-price="799.00"
-                            data-product-image="/images/products/beige jeans.png"
-                            aria-label="Add High-Rise Jeans to cart">
-                            <i class="fa-solid fa-bag-shopping"></i> Add to Cart
-                        </button>
                     </div>
                 </div>
             </article>
 
-            <br>
             <!-- ---- PRODUCT CARD 6 — Knit Cardigan ---- -->
             <article class="product-card"
                 data-season="winter"
                 data-category="casual"
-                data-colour="balck"
+                data-colour="black"
                 id="product-6">
                 <div class="product-card-image-wrapper">
                     <img
@@ -599,7 +539,7 @@
                         loading="lazy"
                     >
                     <span class="stock-badge stock-in">In Stock</span>
-                    <button class="wishlist-btn" aria-label="Add Knit Cardigan to wishlist">
+                    <button type="button" class="wishlist-btn" aria-label="Add Knit Cardigan to favourites" aria-pressed="false">
                         <i class="fa-regular fa-heart"></i>
                     </button>
                 </div>
@@ -620,7 +560,7 @@
                         <div class="product-detail-item">
                             <span class="product-detail-label">Colour:</span>
                             <span class="product-detail-value">
-                                <span class="colour-dot" style="background-color:#E8E2DB; border:1px solid #ccc;"></span> Black
+                                <span class="colour-dot" style="background-color:#000000; border:1px solid #ccc;"></span> Black
                             </span>
                         </div>
                         <div class="product-detail-item">
@@ -634,20 +574,10 @@
                     </div>
                     <div class="product-card-footer">
                         <span class="product-price">R 549.00</span>
-                        <button class="btn btn-add-cart"
-                            data-product-id="6"
-                            data-product-name="Knit Cardigan"
-                            data-product-brand="Cotton On"
-                            data-product-price="549.00"
-                            data-product-image="/images/products/cardigan.png"
-                            aria-label="Add Knit Cardigan to cart">
-                            <i class="fa-solid fa-bag-shopping"></i> Add to Cart
-                        </button>
                     </div>
                 </div>
             </article>
 
-            <br>
             <!-- ---- PRODUCT CARD 7 — Pastel Blazer ---- -->
             <article class="product-card"
                 data-season="spring"
@@ -664,7 +594,7 @@
                         loading="lazy"
                     >
                     <span class="stock-badge stock-in">In Stock</span>
-                    <button class="wishlist-btn" aria-label="Add Pastel Blazer to wishlist">
+                    <button type="button" class="wishlist-btn" aria-label="Add Pastel Blazer to favourites" aria-pressed="false">
                         <i class="fa-regular fa-heart"></i>
                     </button>
                 </div>
@@ -685,7 +615,7 @@
                         <div class="product-detail-item">
                             <span class="product-detail-label">Colour:</span>
                             <span class="product-detail-value">
-                                <span class="colour-dot" style="background-color:#A1CB35;"></span> Blue
+                                <span class="colour-dot" style="background-color:#90CAF9;"></span> Blue
                             </span>
                         </div>
                         <div class="product-detail-item">
@@ -700,20 +630,10 @@
                     </div>
                     <div class="product-card-footer">
                         <span class="product-price">R 1,199.00</span>
-                        <button class="btn btn-add-cart"
-                            data-product-id="7"
-                            data-product-name="Pastel Blazer"
-                            data-product-brand="Zara"
-                            data-product-price="1199.00"
-                            data-product-image="/images/products/pastel blazer.png"
-                            aria-label="Add Pastel Blazer to cart">
-                            <i class="fa-solid fa-bag-shopping"></i> Add to Cart
-                        </button>
                     </div>
                 </div>
             </article>
 
-            <br>
             <!-- ---- PRODUCT CARD 8 — Floral Midi Dress ---- -->
             <article class="product-card"
                 data-season="summer"
@@ -730,7 +650,7 @@
                         loading="lazy"
                     >
                     <span class="stock-badge stock-in">In Stock</span>
-                    <button class="wishlist-btn" aria-label="Add Floral Midi Dress to wishlist">
+                    <button type="button" class="wishlist-btn" aria-label="Add Floral Midi Dress to favourites" aria-pressed="false">
                         <i class="fa-regular fa-heart"></i>
                     </button>
                 </div>
@@ -751,7 +671,7 @@
                         <div class="product-detail-item">
                             <span class="product-detail-label">Colour:</span>
                             <span class="product-detail-value">
-                                <span class="colour-dot" style="background-color:#90CAF9;"></span> Black
+                                <span class="colour-dot" style="background-color:#000000;"></span> Black
                             </span>
                         </div>
                         <div class="product-detail-item">
@@ -766,20 +686,10 @@
                     </div>
                     <div class="product-card-footer">
                         <span class="product-price">R 1,499.00</span>
-                        <button class="btn btn-add-cart"
-                            data-product-id="8"
-                            data-product-name="Floral Midi Dress"
-                            data-product-brand="Truworths"
-                            data-product-price="1499.00"
-                            data-product-image="/images/products/floral dress.png"
-                            aria-label="Add Floral Midi Dress to cart">
-                            <i class="fa-solid fa-bag-shopping"></i> Add to Cart
-                        </button>
                     </div>
                 </div>
             </article>
 
-            <br>
             <!-- ---- PRODUCT CARD 9 — Ankle Boots ---- -->
             <article class="product-card"
                 data-season="autumn"
@@ -796,7 +706,7 @@
                         loading="lazy"
                     >
                     <span class="stock-badge stock-low">Low Stock</span>
-                    <button class="wishlist-btn" aria-label="Add Ankle Boots to wishlist">
+                    <button type="button" class="wishlist-btn" aria-label="Add Ankle Boots to favourites" aria-pressed="false">
                         <i class="fa-regular fa-heart"></i>
                     </button>
                 </div>
@@ -832,20 +742,10 @@
                     </div>
                     <div class="product-card-footer">
                         <span class="product-price">R 1,099.00</span>
-                        <button class="btn btn-add-cart"
-                            data-product-id="9"
-                            data-product-name="Ankle Boots"
-                            data-product-brand="Edgars"
-                            data-product-price="1099.00"
-                            data-product-image="/images/products/ankle boots.png"
-                            aria-label="Add Ankle Boots to cart">
-                            <i class="fa-solid fa-bag-shopping"></i> Add to Cart
-                        </button>
                     </div>
                 </div>
             </article>
 
-            <br>
             <!-- ---- PRODUCT CARD 10 — Wide-Leg Trousers ---- -->
             <article class="product-card"
                 data-season="spring"
@@ -862,7 +762,7 @@
                         loading="lazy"
                     >
                     <span class="stock-badge stock-in">In Stock</span>
-                    <button class="wishlist-btn" aria-label="Add Wide-Leg Trousers to wishlist">
+                    <button type="button" class="wishlist-btn" aria-label="Add Wide-Leg Trousers to favourites" aria-pressed="false">
                         <i class="fa-regular fa-heart"></i>
                     </button>
                 </div>
@@ -883,7 +783,7 @@
                         <div class="product-detail-item">
                             <span class="product-detail-label">Colour:</span>
                             <span class="product-detail-value">
-                                <span class="colour-dot" style="background-color:#FFFFFF; border:1px solid #ccc;"></span> Black
+                                <span class="colour-dot" style="background-color:#000000; border:1px solid #ccc;"></span> Black
                             </span>
                         </div>
                         <div class="product-detail-item">
@@ -898,20 +798,10 @@
                     </div>
                     <div class="product-card-footer">
                         <span class="product-price">R 849.00</span>
-                        <button class="btn btn-add-cart"
-                            data-product-id="10"
-                            data-product-name="Wide-Leg Trousers"
-                            data-product-brand="H&M"
-                            data-product-price="849.00"
-                            data-product-image="/images/products/wide leg trousers.png"
-                            aria-label="Add Wide-Leg Trousers to cart">
-                            <i class="fa-solid fa-bag-shopping"></i> Add to Cart
-                        </button>
                     </div>
                 </div>
             </article>
 
-            <br>
             <!-- ---- PRODUCT CARD 11 — Stilettos ---- -->
             <article class="product-card"
                 data-season="winter"
@@ -928,7 +818,7 @@
                         loading="lazy"
                     >
                     <span class="stock-badge stock-out">Out of Stock</span>
-                    <button class="wishlist-btn" aria-label="Add Stilettos to wishlist">
+                    <button type="button" class="wishlist-btn" aria-label="Add Stilettos to favourites" aria-pressed="false">
                         <i class="fa-regular fa-heart"></i>
                     </button>
                 </div>
@@ -972,7 +862,6 @@
                 </div>
             </article>
 
-            <br>
             <!-- ---- PRODUCT CARD 12 — Straw Bag ---- -->
             <article class="product-card"
                 data-season="summer"
@@ -989,7 +878,7 @@
                         loading="lazy"
                     >
                     <span class="stock-badge stock-in">In Stock</span>
-                    <button class="wishlist-btn" aria-label="Add Straw Bag to wishlist">
+                    <button type="button" class="wishlist-btn" aria-label="Add Straw Bag to favourites" aria-pressed="false">
                         <i class="fa-regular fa-heart"></i>
                     </button>
                 </div>
@@ -1010,7 +899,7 @@
                         <div class="product-detail-item">
                             <span class="product-detail-label">Colour:</span>
                             <span class="product-detail-value">
-                                <span class="colour-dot" style="background-color:#F5F0E8; border:1px solid #ccc;"></span> Brown
+                                <span class="colour-dot" style="background-color:#392B2A; border:1px solid #ccc;"></span> Brown
                             </span>
                         </div>
                         <div class="product-detail-item">
@@ -1022,15 +911,6 @@
                     </div>
                     <div class="product-card-footer">
                         <span class="product-price">R 349.00</span>
-                        <button class="btn btn-add-cart"
-                            data-product-id="12"
-                            data-product-name="Straw Bag"
-                            data-product-brand="Zara"
-                            data-product-price="349.00"
-                            data-product-image="/images/products/straw bag.png"
-                            aria-label="Add Straw Bag to cart">
-                            <i class="fa-solid fa-bag-shopping"></i> Add to Cart
-                        </button>
                     </div>
                 </div>
             </article>
