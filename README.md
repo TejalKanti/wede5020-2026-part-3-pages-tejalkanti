@@ -255,6 +255,14 @@ I used GitHub actions to automate the build and deployment process. This include
 | code: added html intial code structure to all webpages | `ea203ca1dbbcb3e3b58f545720fa4af9e3c786ea` |
 | code: created files for the fashion website | `161beecae85991437b462b78b1d6f25dabfba831` |
 
+## 2026-11-03
+**Author:** TejalKanti 
+
+**Email:** ST10513267@myemeris.edu.za
+
+| Commit Message | Commit Code |
+| --- | --- |
+
 
 ---
 
