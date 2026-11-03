@@ -23,7 +23,7 @@
 
 **Public Publishing**: https://tejalkanti.github.io/wede5020-2026-part-3-pages-tejalkanti/
 
-**My Personal Repo for the Publishing**:
+**My Personal Repo for the Publishing**: https://github.com/TejalKanti/wede5020-2026-part-3-pages-tejalkanti.git
 
 ---
 
