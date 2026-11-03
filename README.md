@@ -21,6 +21,10 @@
 
 **Part 3**: https://github.com/EMGPSD/wede5020-2026-part-3-tejalkanti.git
 
+**Public Publishing**: https://tejalkanti.github.io/wede5020-2026-part-3-pages-tejalkanti/
+
+**My Personal Repo for the Publishing**: https://github.com/TejalKanti/wede5020-2026-part-3-pages-tejalkanti.git
+
 ---
 
 ## Project Overview
@@ -253,6 +257,33 @@ I used GitHub actions to automate the build and deployment process. This include
 | code: added html intial code structure to all webpages | `ea203ca1dbbcb3e3b58f545720fa4af9e3c786ea` |
 | code: created files for the fashion website | `161beecae85991437b462b78b1d6f25dabfba831` |
 
+## 2026-11-03
+**Author:** TejalKanti 
+
+**Email:** ST10513267@myemeris.edu.za
+
+| Commit Message | Commit Code |
+| --- | --- |
+| changelog added | `37b5aae16533934861e6df43e229b6a31b89d4bb` |
+| html edited and updated | `2d4a8214` |
+| json edited | `cc0944c3` |
+| js edited and updated | `293d92c9` |
+| css edited and updated | `47997459` |
+| UTILITY FUNCTIONS | `cf6f6577` |
+| GLOBAL SECTION CODE | `46d78653` |
+| TESTIMONIALS SECTION | `ffa596b3` |
+| CARDS | `9b808d64` |
+| ANNOUNCEMENT STRIP | `155f30bc` |
+| BACK TO TOP BUTTON | `c358e313` |
+| SCROLL ANIMATIONS | `ecbb73f3` |
+| OUTFIT BUILDER | `f238a710` |
+| HERO SECTION | `80880475` |
+| 3. NAVIGATION BAR | `dd854989` |
+| 2. NAVIGATION BAR — STICKY SCROLL EFFECT | `330a6363` |
+| 1. DOM READY INITIALIZER | `97076a86` |
+| Merge branch 'main' of https://github.com/EMGPSD/wede5020-2026-part-3-tejalkanti | `d73bdfb7` |
+| JS code added | `0813577c` |
+| Add link for Part 3 in README | `decd1853` |
 
 ---
 
