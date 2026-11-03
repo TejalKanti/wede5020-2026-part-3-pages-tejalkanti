@@ -21,7 +21,9 @@
 
 **Part 3**: https://github.com/EMGPSD/wede5020-2026-part-3-tejalkanti.git
 
-**Public Publishing**:
+**Public Publishing**: https://tejalkanti.github.io/wede5020-2026-part-3-pages-tejalkanti/
+
+**My Personal Repo for the Publishing**:
 
 ---
 
