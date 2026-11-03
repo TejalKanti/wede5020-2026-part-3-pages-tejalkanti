@@ -336,3 +336,67 @@ function initBackToTop() {
         });
     });
 }
+
+/* ============================================================
+   9. ANNOUNCEMENT STRIP — AUTO ROTATE
+   ============================================================
+   Rotates the announcement strip messages every few seconds
+   to highlight different promotions.
+   ============================================================ */
+
+function initAnnouncementStrip() {
+
+    const stripContainer = document.querySelector('.announcement-container');
+
+    if (!stripContainer) return;
+
+    // Announcement messages to rotate
+    const messages = [
+        '<i class="fa-solid fa-truck"></i> Free delivery on orders over R1,500',
+        '<i class="fa-solid fa-star"></i> New Arrivals — Shop the Latest Collection',
+        '<i class="fa-solid fa-tag"></i> Women\'s Day Special — 20% Off Selected Items',
+        '<i class="fa-solid fa-gift"></i> Holiday Collection Now Available — Shop Festive Looks',
+        '<i class="fa-solid fa-rotate"></i> New Season, New Style — Explore Our Collections'
+    ];
+
+    let currentIndex  = 0;
+    const ROTATE_DELAY = 4000; // 4 seconds
+
+    function rotateMessage() {
+        currentIndex = (currentIndex + 1) % messages.length;
+
+        // Fade out
+        stripContainer.style.opacity    = '0';
+        stripContainer.style.transition = 'opacity 0.4s ease';
+
+        setTimeout(function () {
+            // Update content with all 3 items visible
+            const messageCount = Math.min(3, messages.length);
+            let html = '';
+
+            for (let i = 0; i < messageCount; i++) {
+                const msgIndex = (currentIndex + i) % messages.length;
+                html += '<span>' + messages[msgIndex] + '</span>';
+                if (i < messageCount - 1) {
+                    html += '<span class="strip-divider">|</span>';
+                }
+            }
+
+            stripContainer.innerHTML = html;
+
+            // Fade back in
+            stripContainer.style.opacity = '1';
+
+        }, 400);
+    }
+
+    // Start rotation
+    const stripInterval = setInterval(rotateMessage, ROTATE_DELAY);
+
+    // Pause rotation when page is not visible
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            clearInterval(stripInterval);
+        }
+    });
+}
