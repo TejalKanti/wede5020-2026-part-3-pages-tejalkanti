@@ -56,3 +56,42 @@ function initNavbarScroll() {
         }
     });
 }
+
+// 3. NAVIGATION BAR — CLOSE MENU ON OUTSIDE CLICK
+
+function initCloseMenuOnOutsideClick() {
+
+    document.addEventListener('click', function (event) {
+
+        const hamburger = document.getElementById('hamburger');
+        const navMenu   = document.getElementById('navMenu');
+
+        if (!hamburger || !navMenu) return;
+
+        const isMenuOpen        = navMenu.classList.contains('open');
+        const clickedHamburger  = hamburger.contains(event.target);
+        const clickedMenu       = navMenu.contains(event.target);
+
+        if (isMenuOpen && !clickedHamburger && !clickedMenu) {
+            if (typeof window.closeMobileMenu === 'function') {
+                window.closeMobileMenu();
+            }
+        }
+    });
+}
+
+
+ //  4. NAVIGATION BAR — CLOSE MENU ON NAV LINK CLICK
+
+function initCloseMenuOnLinkClick() {
+
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+            if (typeof window.closeMobileMenu === 'function') {
+                window.closeMobileMenu();
+            }
+        });
+    });
+}
