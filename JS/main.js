@@ -460,3 +460,21 @@ function initPromoCardsAnimation() {
         card.style.transitionDelay = (index * 0.1) + 's';
     });
 }
+
+/* ============================================================
+   12. TESTIMONIALS — SIMPLE SCROLL REVEAL
+   ============================================================
+   Reveals testimonial cards one by one with a staggered
+   delay as the user scrolls into the testimonials section.
+   ============================================================ */
+
+function initTestimonialsReveal() {
+
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+
+    if (testimonialCards.length === 0) return;
+
+    testimonialCards.forEach(function (card, index) {
+        card.style.transitionDelay = (index * 0.15) + 's';
+    });
+}
