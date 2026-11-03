@@ -19,6 +19,8 @@
 	
 **Part 2**: https://github.com/EMGPSD/wede5020-2026-part-2-tejalkanti
 
+**Part 3**: https://github.com/EMGPSD/wede5020-2026-part-3-tejalkanti.git
+
 ---
 
 ## Project Overview
