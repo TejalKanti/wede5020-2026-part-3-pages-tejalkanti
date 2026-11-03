@@ -120,3 +120,79 @@ function initScrollIndicator() {
         }
     }, { passive: true });
 }
+
+/* ============================================================
+   6. OUTFIT BUILDER — FILTER FUNCTIONALITY
+   ============================================================
+   Filters outfit cards on the homepage outfit builder section
+   based on data-category and data-season attributes.
+   Clicking a filter button shows only matching cards.
+   ============================================================ */
+
+function initOutfitFilter() {
+
+    const filterBar  = document.getElementById('outfitFilterBar');
+    const outfitGrid = document.getElementById('outfitGrid');
+
+    if (!filterBar || !outfitGrid) return;
+
+    const filterButtons = filterBar.querySelectorAll('.filter-btn');
+    const outfitCards   = outfitGrid.querySelectorAll('.outfit-card');
+
+    filterButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+
+            const filterValue = this.getAttribute('data-filter');
+
+            // ---- Update active button state ----
+            filterButtons.forEach(function (btn) {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
+            });
+
+            this.classList.add('active');
+            this.setAttribute('aria-selected', 'true');
+
+            // ---- Filter outfit cards ----
+            outfitCards.forEach(function (card) {
+                const cardCategory = card.getAttribute('data-category');
+                const cardSeason   = card.getAttribute('data-season');
+
+                if (filterValue === 'all') {
+                    showCard(card);
+                } else if (
+                    cardCategory === filterValue ||
+                    cardSeason   === filterValue
+                ) {
+                    showCard(card);
+                } else {
+                    hideCard(card);
+                }
+            });
+
+        });
+    });
+
+    // ---- Helper: Show card with animation ----
+    function showCard(card) {
+        card.classList.remove('hidden');
+        card.style.display = '';
+
+        // Trigger reflow for transition
+        void card.offsetWidth;
+
+        card.style.opacity  = '1';
+        card.style.transform = 'translateY(0)';
+    }
+
+    // ---- Helper: Hide card ----
+    function hideCard(card) {
+        card.style.opacity  = '0';
+        card.style.transform = 'translateY(10px)';
+
+        setTimeout(function () {
+            card.classList.add('hidden');
+            card.style.display = 'none';
+        }, 300);
+    }
+}
