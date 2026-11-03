@@ -196,3 +196,102 @@ function initOutfitFilter() {
         }, 300);
     }
 }
+
+/* ============================================================
+   7. SCROLL ANIMATIONS — INTERSECTIONOBSERVER
+   ============================================================
+   Uses IntersectionObserver to add a 'visible' class to
+   elements with the 'fade-in-up', 'fade-in-left', or
+   'fade-in-right' classes when they enter the viewport.
+   ============================================================ */
+
+function initScrollAnimations() {
+
+    // Assign animation classes to specific homepage elements
+    assignAnimationClasses();
+
+    const animatedElements = document.querySelectorAll(
+        '.fade-in-up, .fade-in-left, .fade-in-right'
+    );
+
+    if (animatedElements.length === 0) return;
+
+    // Check if browser supports IntersectionObserver
+    if (!('IntersectionObserver' in window)) {
+        // Fallback: show all elements immediately
+        animatedElements.forEach(function (el) {
+            el.classList.add('visible');
+        });
+        return;
+    }
+
+    const observerOptions = {
+        root:       null,         // Observe relative to the viewport
+        rootMargin: '0px 0px -60px 0px', // Trigger 60px before entering viewport
+        threshold:  0.1           // Trigger when 10% of element is visible
+    };
+
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Unobserve after animation to save performance
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    animatedElements.forEach(function (el) {
+        observer.observe(el);
+    });
+}
+
+/* Assigns animation classes to homepage elements */
+function assignAnimationClasses() {
+
+    // Section headers
+    const sectionHeaders = document.querySelectorAll('.section-header');
+    sectionHeaders.forEach(function (header) {
+        header.classList.add('fade-in-up');
+    });
+
+    // Collection cards
+    const collectionCards = document.querySelectorAll('.collection-card');
+    collectionCards.forEach(function (card) {
+        card.classList.add('fade-in-up');
+    });
+
+    // Outfit cards
+    const outfitCards = document.querySelectorAll('.outfit-card');
+    outfitCards.forEach(function (card) {
+        card.classList.add('fade-in-up');
+    });
+
+    // Feature cards (Why Choose Us)
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach(function (card) {
+        card.classList.add('fade-in-up');
+    });
+
+    // Promo cards
+    const promoCards = document.querySelectorAll('.promo-card');
+    promoCards.forEach(function (card) {
+        card.classList.add('fade-in-up');
+    });
+
+    // Testimonial cards
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+    testimonialCards.forEach(function (card) {
+        card.classList.add('fade-in-up');
+    });
+
+    // CTA strip content
+    const ctaText    = document.querySelector('.cta-strip-text');
+    const ctaButtons = document.querySelector('.cta-strip-buttons');
+    if (ctaText)    ctaText.classList.add('fade-in-left');
+    if (ctaButtons) ctaButtons.classList.add('fade-in-right');
+
+    // Announcement strip
+    const announcementStrip = document.querySelector('.announcement-strip');
+    if (announcementStrip) announcementStrip.classList.add('fade-in-up');
+}
