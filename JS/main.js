@@ -295,3 +295,44 @@ function assignAnimationClasses() {
     const announcementStrip = document.querySelector('.announcement-strip');
     if (announcementStrip) announcementStrip.classList.add('fade-in-up');
 }
+
+/* ============================================================
+   8. BACK TO TOP BUTTON
+   ============================================================
+   Shows the Back to Top button when the user scrolls down
+   and smoothly scrolls back to the top when clicked.
+   ============================================================ */
+
+function initBackToTop() {
+
+    const backToTopBtn = document.getElementById('backToTop');
+
+    if (!backToTopBtn) return;
+
+    const SHOW_THRESHOLD = 400;
+
+    // ---- Show / hide button on scroll ----
+    let backToTopTicking = false;
+
+    window.addEventListener('scroll', function () {
+        if (!backToTopTicking) {
+            window.requestAnimationFrame(function () {
+                if (window.scrollY > SHOW_THRESHOLD) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+                backToTopTicking = false;
+            });
+            backToTopTicking = true;
+        }
+    }, { passive: true });
+
+    // ---- Scroll to top on click ----
+    backToTopBtn.addEventListener('click', function () {
+        window.scrollTo({
+            top:      0,
+            behavior: 'smooth'
+        });
+    });
+}
