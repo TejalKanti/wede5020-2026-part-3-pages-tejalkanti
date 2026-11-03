@@ -400,3 +400,63 @@ function initAnnouncementStrip() {
         }
     });
 }
+
+/* ============================================================
+   10. COLLECTION CARDS — HOVER TILT EFFECT
+   ============================================================
+   Adds a subtle 3D tilt effect to collection cards on
+   desktop when the user hovers over them.
+   ============================================================ */
+
+function initCollectionCardTilt() {
+
+    // Only apply on non-touch devices
+    if (window.matchMedia('(hover: none)').matches) return;
+
+    const cards = document.querySelectorAll('.collection-card');
+
+    if (cards.length === 0) return;
+
+    cards.forEach(function (card) {
+
+        card.addEventListener('mousemove', function (event) {
+            const rect     = card.getBoundingClientRect();
+            const centerX  = rect.left + rect.width  / 2;
+            const centerY  = rect.top  + rect.height / 2;
+            const deltaX   = event.clientX - centerX;
+            const deltaY   = event.clientY - centerY;
+            const maxTilt  = 6; // Maximum tilt in degrees
+
+            const tiltX = -(deltaY / (rect.height / 2)) * maxTilt;
+            const tiltY =  (deltaX / (rect.width  / 2)) * maxTilt;
+
+            card.style.transform =
+                'translateY(-8px) perspective(800px) rotateX(' + tiltX + 'deg) rotateY(' + tiltY + 'deg)';
+            card.style.transition = 'transform 0.1s ease';
+        });
+
+        card.addEventListener('mouseleave', function () {
+            card.style.transform  = '';
+            card.style.transition = 'transform 0.4s ease';
+        });
+    });
+}
+
+
+/* ============================================================
+   11. PROMO CARDS — ENTRANCE ANIMATION
+   ============================================================
+   Adds a sequential entrance animation to promo cards
+   using staggered delays when they scroll into view.
+   ============================================================ */
+
+function initPromoCardsAnimation() {
+
+    const promoCards = document.querySelectorAll('.promo-card');
+
+    if (promoCards.length === 0) return;
+
+    promoCards.forEach(function (card, index) {
+        card.style.transitionDelay = (index * 0.1) + 's';
+    });
+}
