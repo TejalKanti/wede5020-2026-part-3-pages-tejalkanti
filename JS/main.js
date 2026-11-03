@@ -478,3 +478,106 @@ function initTestimonialsReveal() {
         card.style.transitionDelay = (index * 0.15) + 's';
     });
 }
+
+/* ============================================================
+   16. GLOBAL — ACTIVE NAVIGATION LINK HIGHLIGHTER
+   ============================================================
+   Automatically highlights the correct navigation link
+   based on the current page URL.
+   ============================================================ */
+
+function initActiveNavLink() {
+
+    const navLinks      = document.querySelectorAll('.nav-link');
+    const currentPage   = window.location.pathname.split('/').pop() || 'index.html';
+
+    navLinks.forEach(function (link) {
+        const linkHref = link.getAttribute('href');
+
+        if (!linkHref) return;
+
+        const linkPage = linkHref.split('/').pop().split('#')[0];
+
+        // Remove existing active class
+        link.classList.remove('active');
+
+        // Set active based on current page
+        if (
+            linkPage === currentPage ||
+            (currentPage === '' && linkPage === 'index.html') ||
+            (currentPage === 'index.html' && linkPage === 'index.html')
+        ) {
+            link.classList.add('active');
+        }
+    });
+}
+
+
+/* ============================================================
+   13. GLOBAL — SMOOTH SCROLL FOR ANCHOR LINKS
+   ============================================================
+   Enables smooth scrolling for all internal anchor links
+   (links starting with #) across all pages.
+   Accounts for the fixed navigation bar height offset.
+   ============================================================ */
+
+function initSmoothScroll() {
+
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    const NAV_OFFSET  = 90; // px — accounts for fixed navbar height
+
+    anchorLinks.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+
+            const href   = this.getAttribute('href');
+
+            // Skip if just '#' or empty
+            if (!href || href === '#') return;
+
+            const target = document.querySelector(href);
+
+            if (!target) return;
+
+            event.preventDefault();
+
+            const targetPosition = target.getBoundingClientRect().top
+                                 + window.pageYOffset
+                                 - NAV_OFFSET;
+
+            window.scrollTo({
+                top:      targetPosition,
+                behavior: 'smooth'
+            });
+
+            // Close mobile menu if open
+            if (typeof window.closeMobileMenu === 'function') {
+                window.closeMobileMenu();
+            }
+        });
+    });
+}
+
+
+/* ============================================================
+   14. GLOBAL — PAGE LOAD ANIMATION
+   ============================================================
+   Adds a smooth fade-in effect to the page body when
+   the page first loads.
+   ============================================================ */
+
+function initPageLoadAnimation() {
+
+    // Set initial state
+    document.body.style.opacity    = '0';
+    document.body.style.transition = 'opacity 0.5s ease';
+
+    // Trigger fade in
+    window.addEventListener('load', function () {
+        document.body.style.opacity = '1';
+    });
+
+    // Fallback if load event already fired
+    if (document.readyState === 'complete') {
+        document.body.style.opacity = '1';
+    }
+}
