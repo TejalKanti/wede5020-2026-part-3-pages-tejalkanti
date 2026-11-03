@@ -95,3 +95,28 @@ function initCloseMenuOnLinkClick() {
         });
     });
 }
+
+
+/* ============================================================
+   5. HERO SECTION — SCROLL INDICATOR
+   ============================================================
+   Hides the scroll indicator arrow once the user starts
+   scrolling down the page.
+   ============================================================ */
+
+function initScrollIndicator() {
+
+    const scrollIndicator = document.querySelector('.hero-scroll-indicator');
+
+    if (!scrollIndicator) return;
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 100) {
+            scrollIndicator.style.opacity = '0';
+            scrollIndicator.style.pointerEvents = 'none';
+        } else {
+            scrollIndicator.style.opacity = '1';
+            scrollIndicator.style.pointerEvents = 'all';
+        }
+    }, { passive: true });
+}
