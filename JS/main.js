@@ -10,10 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
     initContactForm();
     initEnquiryForm();
     initNavbarScroll();
-    initHamburgerMenu();
     initCloseMenuOnOutsideClick();
     initCloseMenuOnLinkClick();
-    initCartBadge();
     initScrollIndicator();
     initOutfitFilter();
     initScrollAnimations();
@@ -101,11 +99,14 @@ function initProductFilters() {
 
     const filterPanel = document.getElementById('filterPanel');
     const productsGrid = document.getElementById('productsGrid');
+    const outfitCards = Array.from(document.querySelectorAll('.outfit-library-card'));
+    const outfitLibraryCount = document.getElementById('outfitLibraryCount');
 
     if (!filterPanel || !productsGrid) return;
 
     const filterButtons = filterPanel.querySelectorAll('[data-filter-type][data-filter]');
     const productCards = Array.from(productsGrid.querySelectorAll('.product-card'));
+    const seasonCards = document.querySelectorAll('.season-card[data-filter-type][data-filter]');
     const productCount = document.getElementById('productCount');
     const clearFiltersButton = document.getElementById('clearFilters');
     const clearNoResultsButton = document.getElementById('clearFiltersNoResults');
@@ -116,14 +117,23 @@ function initProductFilters() {
         colour: 'all'
     };
 
+    function matchesFilters(card) {
+        return Object.keys(selectedFilters).every(function (filterType) {
+            const selectedValue = selectedFilters[filterType];
+            if (selectedValue === 'all') return true;
+
+            const cardValue = card.dataset[filterType] || '';
+            return filterType === 'colour'
+                ? cardValue.split(/\s+/).includes(selectedValue)
+                : cardValue === selectedValue;
+        });
+    }
+
     function updateProducts() {
         let visibleCount = 0;
 
         productCards.forEach(function (card) {
-            const matches = Object.keys(selectedFilters).every(function (filterType) {
-                const selectedValue = selectedFilters[filterType];
-                return selectedValue === 'all' || card.dataset[filterType] === selectedValue;
-            });
+            const matches = matchesFilters(card);
 
             card.classList.toggle('filter-hidden', !matches);
             if (matches) visibleCount += 1;
@@ -135,6 +145,19 @@ function initProductFilters() {
 
         if (noResults) {
             noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        let visibleOutfitCount = 0;
+        outfitCards.forEach(function (card) {
+            const matches = matchesFilters(card);
+            card.hidden = !matches;
+            if (matches) visibleOutfitCount += 1;
+        });
+
+        if (outfitLibraryCount) {
+            outfitLibraryCount.textContent = visibleOutfitCount === 0
+                ? 'No complete outfits match your selected filters.'
+                : 'Showing ' + visibleOutfitCount + ' of ' + outfitCards.length + ' outfits';
         }
     }
 
@@ -168,6 +191,20 @@ function initProductFilters() {
             });
 
             updateProducts();
+        });
+    });
+
+    seasonCards.forEach(function (card) {
+        card.addEventListener('click', function () {
+            const matchingFilter = Array.from(filterButtons).find(function (button) {
+                return button.dataset.filterType === card.dataset.filterType
+                    && button.dataset.filter === card.dataset.filter;
+            });
+
+            if (matchingFilter) {
+                resetFilters();
+                matchingFilter.click();
+            }
         });
     });
 
@@ -583,6 +620,7 @@ function initOutfitFilter() {
 
     const filterButtons = filterBar.querySelectorAll('.filter-btn');
     const outfitCards   = outfitGrid.querySelectorAll('.outfit-card');
+    const hideTimers    = new WeakMap();
 
     filterButtons.forEach(function (button) {
         button.addEventListener('click', function () {
@@ -620,6 +658,7 @@ function initOutfitFilter() {
 
     // ---- Helper: Show card with animation ----
     function showCard(card) {
+        clearTimeout(hideTimers.get(card));
         card.classList.remove('hidden');
         card.style.display = '';
 
@@ -632,13 +671,16 @@ function initOutfitFilter() {
 
     // ---- Helper: Hide card ----
     function hideCard(card) {
+        clearTimeout(hideTimers.get(card));
         card.style.opacity  = '0';
         card.style.transform = 'translateY(10px)';
 
-        setTimeout(function () {
+        const timer = setTimeout(function () {
             card.classList.add('hidden');
             card.style.display = 'none';
+            hideTimers.delete(card);
         }, 300);
+        hideTimers.set(card, timer);
     }
 }
 
