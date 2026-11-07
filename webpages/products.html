@@ -98,7 +98,7 @@
             </a>
 
             <!-- Season Card 2 — Winter -->
-            <a href="#winter" class="season-card season-card-winter" id="winter-card">
+            <a href="#outfit-library" class="season-card season-card-winter" id="winter-card" data-filter-type="season" data-filter="winter">
                 <div class="season-card-icon">
                     <i class="fa-solid fa-snowflake"></i>
                 </div>
@@ -947,11 +947,15 @@
             </p>
         </div>
 
+        <p class="filter-results-count" id="outfitLibraryCount" aria-live="polite">
+            Showing 6 of 6 outfits
+        </p>
+
         <!-- Outfit Combinations Grid -->
         <div class="outfit-library-grid">
 
             <!-- Outfit 1 — The Power Office Look -->
-            <article class="outfit-library-card" id="office">
+            <article class="outfit-library-card" id="office" data-season="winter" data-category="office" data-colour="black">
                 <div class="outfit-library-image-wrapper">
                     <img
                         src="/images/products/Office Look.png"
@@ -999,7 +1003,7 @@
             </article>
 
             <!-- Outfit 2 — Weekend Casual -->
-            <article class="outfit-library-card" id="casual">
+            <article class="outfit-library-card" id="casual" data-season="summer" data-category="casual" data-colour="blue brown">
                 <div class="outfit-library-image-wrapper">
                     <img
                         src="/images/products/Weekend Look.png"
@@ -1047,7 +1051,7 @@
             </article>
 
             <!-- Outfit 3 — Black Tie Ready -->
-            <article class="outfit-library-card" id="formal">
+            <article class="outfit-library-card" id="formal" data-season="winter" data-category="formal" data-colour="black">
                 <div class="outfit-library-image-wrapper">
                     <img
                         src="/images/products/black tie.png"
@@ -1095,7 +1099,7 @@
             </article>
 
             <!-- Outfit 4 — Autumn Warmth -->
-            <article class="outfit-library-card" id="autumn">
+            <article class="outfit-library-card" id="autumn" data-season="autumn" data-category="casual" data-colour="brown black">
                 <div class="outfit-library-image-wrapper">
                     <img
                         src="/images/products/Autumn Look.png"
@@ -1143,7 +1147,7 @@
             </article>
 
             <!-- Outfit 5 — Spring Professional -->
-            <article class="outfit-library-card" id="spring">
+            <article class="outfit-library-card" id="spring" data-season="spring" data-category="office" data-colour="blue black">
                 <div class="outfit-library-image-wrapper">
                     <img
                         src="/images/products/Spring Look.png"
@@ -1191,7 +1195,7 @@
             </article>
 
             <!-- Outfit 6 — Summer Elegance -->
-            <article class="outfit-library-card" id="summer">
+            <article class="outfit-library-card" id="summer" data-season="summer" data-category="formal" data-colour="black brown">
                 <div class="outfit-library-image-wrapper">
                     <img
                         src="/images/products/Summer Look.png"
