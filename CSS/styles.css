@@ -3323,6 +3323,10 @@ section {
     transition: var(--transition-base);
 }
 
+.outfit-library-card[hidden] {
+    display: none;
+}
+
 .outfit-library-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-xl);
